@@ -153,10 +153,6 @@ public final class ListaPersonal {
         personal.get(i).setRut(modificado.getRut());
         personal.get(i).setPassword(modificado.getPassword());
     }
-
-    public Object get(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     /*------------------------------------------------------------------------*/
     //Métodos temporales para el uso sin archivo para la interfaz
