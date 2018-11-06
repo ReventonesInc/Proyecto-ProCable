@@ -1,5 +1,5 @@
 package clasesproyecto.listas;
-//CHUPALAAAAAAAAAAAAAAAAAAAAAAA
+//HOLI
 import clasesproyecto.*;
 
 public class ProCable {

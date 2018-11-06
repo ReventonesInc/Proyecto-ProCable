@@ -22,7 +22,7 @@ public class VentanaPersonalModificar extends javax.swing.JFrame {
      */
     public VentanaPersonalModificar(ProCable procable, String rut) {
         initComponents();
-         this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
         setResizable(false);
         this.procable = procable;
         this.rut = rut;
@@ -40,71 +40,57 @@ public class VentanaPersonalModificar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
-        lblTitulo = new javax.swing.JLabel();
-        lblSeparador = new javax.swing.JLabel();
-        lblNombre2 = new javax.swing.JLabel();
-        lblApellido2 = new javax.swing.JLabel();
-        lblRut2 = new javax.swing.JLabel();
-        lblpassword2 = new javax.swing.JLabel();
-        jTextNombre2 = new javax.swing.JTextField();
-        jTextApellido2 = new javax.swing.JTextField();
-        jTextPassword2 = new javax.swing.JTextField();
+        jPanelForm = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jTextNombre = new javax.swing.JTextField();
+        jTextApellido = new javax.swing.JTextField();
+        jTextRut = new javax.swing.JTextField();
         jTextMail = new javax.swing.JTextField();
+        jTextPassword = new javax.swing.JTextField();
+        lblNombre = new javax.swing.JLabel();
+        lblApellido = new javax.swing.JLabel();
+        lblRut = new javax.swing.JLabel();
+        lblMail = new javax.swing.JLabel();
+        lblpassword = new javax.swing.JLabel();
         jbAceptar = new javax.swing.JButton();
         jbSalir = new javax.swing.JButton();
-        jTextRut = new javax.swing.JTextField();
-        lblMail1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(428, 330));
 
-        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelForm.setBackground(new java.awt.Color(51, 51, 51));
+        jPanelForm.setPreferredSize(new java.awt.Dimension(428, 330));
+        jPanelForm.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitulo.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        lblTitulo.setText("Formulario Empleado");
-        jPanel3.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, 46));
+        jLabel21.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("Formulario Empleado");
+        jPanelForm.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, 46));
 
-        lblSeparador.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lblSeparador.setText("___________________________________________________");
-        jPanel3.add(lblSeparador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        jLabel22.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel22.setText("___________________________________________________");
+        jPanelForm.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
-        lblNombre2.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombre2.setText("Nombre:");
-        jPanel3.add(lblNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 60, 30));
+        jTextNombre.setBackground(new java.awt.Color(51, 51, 51));
+        jTextNombre.setForeground(new java.awt.Color(255, 255, 255));
+        jTextNombre.setSelectionColor(new java.awt.Color(102, 0, 102));
+        jPanelForm.add(jTextNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 140, -1));
 
-        lblApellido2.setForeground(new java.awt.Color(255, 255, 255));
-        lblApellido2.setText("Apellido:");
-        jPanel3.add(lblApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 60, 30));
+        jTextApellido.setBackground(new java.awt.Color(51, 51, 51));
+        jTextApellido.setForeground(new java.awt.Color(255, 255, 255));
+        jTextApellido.setSelectionColor(new java.awt.Color(102, 0, 102));
+        jPanelForm.add(jTextApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 140, -1));
 
-        lblRut2.setForeground(new java.awt.Color(255, 255, 255));
-        lblRut2.setText("Rut:   ");
-        jPanel3.add(lblRut2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 40, 30));
-
-        lblpassword2.setForeground(new java.awt.Color(255, 255, 255));
-        lblpassword2.setText("Contraseña:");
-        jPanel3.add(lblpassword2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 70, 30));
-
-        jTextNombre2.setBackground(new java.awt.Color(51, 51, 51));
-        jTextNombre2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextNombre2.setSelectionColor(new java.awt.Color(102, 0, 102));
-        jPanel3.add(jTextNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 140, -1));
-
-        jTextApellido2.setBackground(new java.awt.Color(51, 51, 51));
-        jTextApellido2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextApellido2.setSelectionColor(new java.awt.Color(102, 0, 102));
-        jPanel3.add(jTextApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 140, -1));
-
-        jTextPassword2.setBackground(new java.awt.Color(51, 51, 51));
-        jTextPassword2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextPassword2.setSelectionColor(new java.awt.Color(102, 0, 102));
-        jTextPassword2.addActionListener(new java.awt.event.ActionListener() {
+        jTextRut.setBackground(new java.awt.Color(51, 51, 51));
+        jTextRut.setForeground(new java.awt.Color(255, 255, 255));
+        jTextRut.setSelectionColor(new java.awt.Color(102, 0, 102));
+        jTextRut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextPassword2ActionPerformed(evt);
+                jTextRutActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextPassword2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 160, -1));
+        jPanelForm.add(jTextRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 140, -1));
 
         jTextMail.setBackground(new java.awt.Color(51, 51, 51));
         jTextMail.setForeground(new java.awt.Color(255, 255, 255));
@@ -114,7 +100,37 @@ public class VentanaPersonalModificar extends javax.swing.JFrame {
                 jTextMailActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 160, -1));
+        jPanelForm.add(jTextMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 160, -1));
+
+        jTextPassword.setBackground(new java.awt.Color(51, 51, 51));
+        jTextPassword.setForeground(new java.awt.Color(255, 255, 255));
+        jTextPassword.setSelectionColor(new java.awt.Color(102, 0, 102));
+        jTextPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextPasswordActionPerformed(evt);
+            }
+        });
+        jPanelForm.add(jTextPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 160, -1));
+
+        lblNombre.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombre.setText("Nombre:");
+        jPanelForm.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 60, 30));
+
+        lblApellido.setForeground(new java.awt.Color(255, 255, 255));
+        lblApellido.setText("Apellido:");
+        jPanelForm.add(lblApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 60, 30));
+
+        lblRut.setForeground(new java.awt.Color(255, 255, 255));
+        lblRut.setText("Rut:   ");
+        jPanelForm.add(lblRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 40, 30));
+
+        lblMail.setForeground(new java.awt.Color(255, 255, 255));
+        lblMail.setText("Mail:");
+        jPanelForm.add(lblMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 40, 30));
+
+        lblpassword.setForeground(new java.awt.Color(255, 255, 255));
+        lblpassword.setText("Contraseña:");
+        jPanelForm.add(lblpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 70, 30));
 
         jbAceptar.setBackground(new java.awt.Color(102, 0, 102));
         jbAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -125,7 +141,7 @@ public class VentanaPersonalModificar extends javax.swing.JFrame {
                 jbAceptarActionPerformed(evt);
             }
         });
-        jPanel3.add(jbAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 130, 30));
+        jPanelForm.add(jbAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 130, 30));
 
         jbSalir.setBackground(new java.awt.Color(102, 0, 102));
         jbSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -136,43 +152,33 @@ public class VentanaPersonalModificar extends javax.swing.JFrame {
                 jbSalirActionPerformed(evt);
             }
         });
-        jPanel3.add(jbSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 130, 30));
-
-        jTextRut.setBackground(new java.awt.Color(51, 51, 51));
-        jTextRut.setForeground(new java.awt.Color(255, 255, 255));
-        jTextRut.setSelectionColor(new java.awt.Color(102, 0, 102));
-        jTextRut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextRutActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jTextRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 140, -1));
-
-        lblMail1.setForeground(new java.awt.Color(255, 255, 255));
-        lblMail1.setText("Mail:");
-        jPanel3.add(lblMail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 40, 30));
+        jPanelForm.add(jbSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 130, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanelForm, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanelForm, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextPassword2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextPassword2ActionPerformed
+    private void jTextRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextRutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextPassword2ActionPerformed
+    }//GEN-LAST:event_jTextRutActionPerformed
 
     private void jTextMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextMailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextMailActionPerformed
+
+    private void jTextPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextPasswordActionPerformed
 
     private void jbAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAceptarActionPerformed
 
@@ -196,7 +202,7 @@ public class VentanaPersonalModificar extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(null, "Es obligatorio completar el formulario!");
                         }
                         else{
-                            (this.procable).modificarPersonal(jTextNombre2.getText(), jTextApellido2.getText(), jTextRut.getText(),rut, jTextMail.getText(), jTextPassword2.getText());
+                            (this.procable).modificarPersonal(jTextNombre.getText(), jTextApellido.getText(), jTextRut.getText(), this.rut, jTextMail.getText(), jTextPassword.getText());
                             JOptionPane.showMessageDialog(null, "Empleado modificado con exito!");
                             OpcionPersonal submenu = new OpcionPersonal(procable);
                             submenu.setVisible(true);
@@ -214,53 +220,29 @@ public class VentanaPersonalModificar extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jbSalirActionPerformed
 
-    private void jTextRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextRutActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextRutActionPerformed
-    
     public void insertarDatos(){
-        jTextNombre2.setText((this.procable).personal.obtenerNombre(rut));
-        jTextApellido2.setText((this.procable).personal.obtenerApellido(rut));
-        jTextRut.setText(rut);
+        jTextNombre.setText((this.procable).personal.obtenerNombre(rut));
+        jTextApellido.setText((this.procable).personal.obtenerApellido(rut));
+        jTextRut.setText(this.rut);
         jTextMail.setText((this.procable).personal.obtenerMail(rut));
-        jTextPassword2.setText((this.procable).personal.obtenerPassword(rut));
+        jTextPassword.setText((this.procable).personal.obtenerPassword(rut));
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JPanel jPanelForm;
     private javax.swing.JTextField jTextApellido;
-    private javax.swing.JTextField jTextApellido1;
-    private javax.swing.JTextField jTextApellido2;
     private javax.swing.JTextField jTextMail;
     private javax.swing.JTextField jTextNombre;
-    private javax.swing.JTextField jTextNombre1;
-    private javax.swing.JTextField jTextNombre2;
     private javax.swing.JTextField jTextPassword;
-    private javax.swing.JTextField jTextPassword1;
-    private javax.swing.JTextField jTextPassword2;
     private javax.swing.JTextField jTextRut;
     private javax.swing.JButton jbAceptar;
     private javax.swing.JButton jbSalir;
     private javax.swing.JLabel lblApellido;
-    private javax.swing.JLabel lblApellido1;
-    private javax.swing.JLabel lblApellido2;
-    private javax.swing.JLabel lblMail1;
+    private javax.swing.JLabel lblMail;
     private javax.swing.JLabel lblNombre;
-    private javax.swing.JLabel lblNombre1;
-    private javax.swing.JLabel lblNombre2;
     private javax.swing.JLabel lblRut;
-    private javax.swing.JLabel lblRut1;
-    private javax.swing.JLabel lblRut2;
-    private javax.swing.JLabel lblSeparador;
-    private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblpassword;
-    private javax.swing.JLabel lblpassword1;
-    private javax.swing.JLabel lblpassword2;
     // End of variables declaration//GEN-END:variables
 }
