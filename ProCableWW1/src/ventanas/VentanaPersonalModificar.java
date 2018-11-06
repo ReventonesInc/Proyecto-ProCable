@@ -57,7 +57,9 @@ public class VentanaPersonalModificar extends javax.swing.JFrame {
         jbSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(428, 330));
+        setResizable(false);
 
         jPanelForm.setBackground(new java.awt.Color(51, 51, 51));
         jPanelForm.setPreferredSize(new java.awt.Dimension(428, 330));
@@ -215,6 +217,7 @@ public class VentanaPersonalModificar extends javax.swing.JFrame {
     }//GEN-LAST:event_jbAceptarActionPerformed
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
+        JOptionPane.showMessageDialog(null, "No se modificó el empleado!");
         OpcionClientes submenu = new OpcionClientes(procable);
         submenu.setVisible(true);
         dispose();
