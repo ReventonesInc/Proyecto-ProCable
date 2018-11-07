@@ -5,6 +5,9 @@
  */
 package clasesproyecto;
 
+import clasesproyecto.listas.*;
+import java.util.*;
+
 /* Haashmap de planes conectado con la sucursal
 */
 
@@ -13,11 +16,13 @@ public class Sucursal {
     private String nombreSucursal;
     private String direccionSurcursal;
     private String rutSucursal;
+    private HashMap<String, ListaFactura> facturasAnuales;
 
     public Sucursal(String nombreSucursal, String direccionSurcursal, String rutSucursal) {
         this.nombreSucursal = nombreSucursal;
         this.direccionSurcursal = direccionSurcursal;
         this.rutSucursal = rutSucursal;
+        this.facturasAnuales = new HashMap<>();
     }
 
     public String getNombreSucursal() {
@@ -43,6 +48,4 @@ public class Sucursal {
     public void setRutSucursal(String rutSucursal) {
         this.rutSucursal = rutSucursal;
     }
-    
-    
 }
