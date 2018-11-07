@@ -5,12 +5,12 @@ import clasesproyecto.listas.ListaClienteContratado;
 public class Plan {
     private int ID;
     private String nombrePlan;
-    private int valorPlan;
+    private float valorPlan;
     private int cantCanales;
     private ListaClienteContratado clientesContratados;
 	
 //--------------------------------------------- Constructor -----------------------------------------//
-    public Plan(int ID, String nombrePlan, int valorPlan, int cantCanales) {
+    public Plan(int ID, String nombrePlan, float valorPlan, int cantCanales) {
         this.ID = ID;
         this.clientesContratados = new ListaClienteContratado();
 	this.nombrePlan = nombrePlan;
@@ -27,7 +27,7 @@ public class Plan {
         this.nombrePlan = nombrePlan;
     }
 
-    public int getValorPlan() {
+    public float getValorPlan() {
         return valorPlan;
     }
     
