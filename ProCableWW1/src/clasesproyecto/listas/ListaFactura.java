@@ -15,5 +15,4 @@ public class ListaFactura {
         this.facturas = new ArrayList<Factura>();
     }
     
-    
 }

@@ -1,14 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package clasesproyecto;
 
-/**
- *
- * @author ceap2
- */
+
 public class Factura {
+    private Cliente clienteAbonante;
+    private float montoPagado;
+    
+    public Factura(Cliente clienteAbonante, float montoPagado){
+        this.clienteAbonante = clienteAbonante;
+        this.montoPagado = montoPagado;
+    }
+
+    public Cliente getClienteAbonante() {
+        return clienteAbonante;
+    }
+
+    public float getMontoPagado() {
+        return montoPagado;
+    }
+
+    public void setClienteAbonante(Cliente clienteAbonante) {
+        this.clienteAbonante = clienteAbonante;
+    }
+
+    public void setMontoPagado(float montoPagado) {
+        this.montoPagado = montoPagado;
+    }
     
 }
