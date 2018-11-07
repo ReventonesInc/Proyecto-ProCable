@@ -145,17 +145,17 @@ public final class ListaPersonal {
         }
     }
     
-    public void modificarPersonal (String rutPersonal, Personal modificado){
-        int i = indice(rutPersonal);
-        personal.get(i).setNombre(modificado.getNombre());
-        personal.get(i).setApellido(modificado.getApellido());
-        personal.get(i).setCorreoElectronico(modificado.getCorreoElectronico());
+    public void modificarPersonal (String rutPersonal, Personal modificado){        //Método para modificar un empledo según su rut antiguo
+        int i = indice(rutPersonal);                                                //Primero se buscar la posición del empleado en lista personal con el método indice
+        personal.get(i).setNombre(modificado.getNombre());                          /*Al encontrar la posición del empleado*/
+        personal.get(i).setApellido(modificado.getApellido());                      /*se modifica los datos según lo que se*/
+        personal.get(i).setCorreoElectronico(modificado.getCorreoElectronico());    /*envió por parametro*/
         personal.get(i).setRut(modificado.getRut());
         personal.get(i).setPassword(modificado.getPassword());
     }
     
-    public void mostrarPersonal (){
-        for(int i = 0; i < tamano(); i++){
+    public void mostrarPersonal (){                                                 //Método para mostrar la lista personal por consola
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y se imprime los datos que contiene cada casilla
             System.out.println("Nombre: "+personal.get(i).getNombre());
             System.out.println("Apellido: "+personal.get(i).getApellido());
             System.out.println("Rut: "+personal.get(i).getRut());
@@ -165,49 +165,61 @@ public final class ListaPersonal {
         }
     }
     
+    public boolean buscarPassword (String passwordBuscar){                          //Método para buscar la contraseña del empleado
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara la contraseña del empleado con la que fue
+            if(personal.get(i).getPassword().equals(passwordBuscar)){               //recibida por parametro
+                return true;
+            }
+        }
+        return false;
+    }
+    
     /*------------------------------------------------------------------------*/
-    //Métodos temporales para el uso sin archivo para la interfaz
+    /* Métodos temporales para el uso de la interfaz grafica del proyecto
+     * ProCable sin base de datos. La interfaz grafica 
+     * está en la carpeta "ventanas".
+     */
     
-    public String obtenerNombre (String rut){
-        for(int i = 0; i < tamano(); i++){
-            if(personal.get(i).getRut().equals(rut)) {
-                return personal.get(i).getNombre();
+    public String obtenerNombre (String rut){                                       //Método para obtener el nombre del empleado según el rut ingresado
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara el rut del empleado con la que fue
+            if(personal.get(i).getRut().equals(rut)) {                              //recibida por parametro
+                return personal.get(i).getNombre();                                 //Retorna el nombre del empleado
             }
         }
         return null;
     }
     
-    public String obtenerApellido (String rut){
-        for(int i = 0; i < tamano(); i++){
-            if(personal.get(i).getRut().equals(rut)) {
-                return personal.get(i).getApellido();
+    public String obtenerApellido (String rut){                                     //Método para obtener el nombre del empleado según el rut ingresado
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara el rut del empleado con la que fue
+            if(personal.get(i).getRut().equals(rut)) {                              //recibida por parametro
+                return personal.get(i).getApellido();                               //Retorna el apellido del empleado
             }
         }
         return null;
     }
     
-    public String obtenerRut (String rut){
-        for(int i = 0; i < tamano(); i++){
-            if(personal.get(i).getRut().equals(rut)) {
-                return personal.get(i).getRut();
+    public String obtenerRut (String rut){                                          //Método para obtener el nombre del empleado según el rut ingresado
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara el rut del empleado con la que fue
+            if(personal.get(i).getRut().equals(rut)) {                              //recibida por parametro
+                return personal.get(i).getRut();                                    //Retorna el rut del empleado
             }
         }
         return null;
     }
     
-    public String obtenerMail (String rut){
-        for(int i = 0; i < tamano(); i++){
-            if(personal.get(i).getRut().equals(rut)) {
-                return personal.get(i).getCorreoElectronico();
+    public String obtenerMail (String rut){                                         //Método para obtener el nombre del empleado según el rut ingresado
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara el rut del empleado con la que fue
+            if(personal.get(i).getRut().equals(rut)) {                              //recibida por parametro
+                return personal.get(i).getCorreoElectronico();                      //Retorna el correo electronico del empleado
             }
         }
         return null;
     }
     
-    public String obtenerPassword (String rut){
-        for(int i = 0; i < tamano(); i++){
-            if(personal.get(i).getRut().equals(rut)) {
-                return personal.get(i).getPassword();
+    public String obtenerPassword (String rut){                                     //Método para obtener el nombre del empleado según el rut ingresado
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara el rut del empleado con la que fue
+            if(personal.get(i).getRut().equals(rut)) {                              //recibida por parametro
+                return personal.get(i).getPassword();                               //Retorna la contraseña del empleado
             }
         }
         return null;

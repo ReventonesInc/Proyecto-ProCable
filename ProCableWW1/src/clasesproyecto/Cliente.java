@@ -38,7 +38,7 @@ public class Cliente extends Persona {
         this.fechaContrato = nuevaFecha;
     }
     
-    public void calcularDeuda(int otrosPagos){
+    public void calcularDeuda(float otrosPagos){
         int i;
          /*
         WNNN NO SE COMO  HACER LA WEA DE LA DIFERENCIA DE MESES CON LAS DOS FECHAS

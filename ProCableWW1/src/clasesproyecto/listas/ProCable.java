@@ -2,6 +2,10 @@ package clasesproyecto.listas;
 
 import clasesproyecto.*;
 
+
+
+//LUCHO FLOJO CUULIAOOO CHUPALA MARACO
+
 public class ProCable {
     public ListaPersonal personal;
     public ListaCliente clientes;
@@ -84,5 +88,9 @@ public class ProCable {
     
     public void mostrarPersonal(){
         personal.mostrarPersonal();
+    }
+    
+    public boolean buscarPassword(String password){
+        return personal.buscarPassword(password);
     }
 }

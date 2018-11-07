@@ -119,7 +119,7 @@ public class OpcionPersonal extends javax.swing.JFrame {
         BtnMostrarPersonal.setBackground(new java.awt.Color(102, 0, 102));
         BtnMostrarPersonal.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         BtnMostrarPersonal.setForeground(new java.awt.Color(255, 255, 255));
-        BtnMostrarPersonal.setText("Mostrar Lista");
+        BtnMostrarPersonal.setText("Mostrar");
         BtnMostrarPersonal.setBorder(null);
         BtnMostrarPersonal.setContentAreaFilled(false);
         BtnMostrarPersonal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -181,7 +181,9 @@ public class OpcionPersonal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No hay empleados por mostrar!");
         }
         else{
-            //ingresar ventana mostrar
+            VentanaRutMostrarPersonal formrut = new VentanaRutMostrarPersonal(procable);
+            formrut.setVisible(true);
+            dispose();
         }
     }//GEN-LAST:event_BtnMostrarPersonalActionPerformed
 
