@@ -56,6 +56,6 @@ public class Plan {
     }
 
     public void setID(int iD) {
-        ID = iD;
+        this.ID = iD;
     }	
 }
