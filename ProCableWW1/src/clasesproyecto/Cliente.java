@@ -1,16 +1,18 @@
 package clasesproyecto;
 
 import java.util.*;
+import java.text.*;
+
 
 public class Cliente extends Persona {
     private String telefono;
-    private Date fechaContrato;
+    private SimpleDateFormat fechaContrato;
 	
 //--------------------------------------Constructor--------------------------------------------------//
     public Cliente(int ID, String nombre, String apellido, String rut, String correoElectronico, String telefono) {
         super(ID, nombre, apellido, rut, correoElectronico);
 	this.telefono = telefono;
-	this.fechaContrato = new Date();
+	this.fechaContrato = new SimpleDateFormat();
     }
 //------------------------------------- Getters y setters -------------------------------------------//
     public String getTelefono() {
@@ -21,11 +23,11 @@ public class Cliente extends Persona {
 	this.telefono = telefono;
     }
 	
-    public Date getFecha() {
+    public SimpleDateFormat getFecha() {
         return fechaContrato;
     }
     
-    public void setFecha(Date nuevaFecha) {
+    public void setFecha(SimpleDateFormat nuevaFecha) {
         this.fechaContrato = nuevaFecha;
     }
 }
