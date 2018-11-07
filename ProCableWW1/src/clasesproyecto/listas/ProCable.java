@@ -1,5 +1,5 @@
 package clasesproyecto.listas;
-//HOLI
+
 import clasesproyecto.*;
 
 public class ProCable {
