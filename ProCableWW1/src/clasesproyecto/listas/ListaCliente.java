@@ -150,5 +150,15 @@ public class ListaCliente {
             System.out.println("Datos: "+ clientes.get(i).getCorreoElectronico());
         }
     }
+    
+    public Cliente clienteMasEndeudado(){
+        for(int i = 0; i < tamano(); i++){
+            
+        }
+    }
+    
+    
+    
+//OJOOO RECORDAR QUE LOS CLIENTES NO PUEDEN SER AÑADIDOS SI NO HAY PLANESSSS
 }
 //---------------------------------------------------------------------------------------------------//

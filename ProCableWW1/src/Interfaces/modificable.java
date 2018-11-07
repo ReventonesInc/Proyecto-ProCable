@@ -5,10 +5,6 @@
  */
 package Interfaces;
 
-/**
- *
- * @author ceap2
- */
 public class modificable {
     
 }
