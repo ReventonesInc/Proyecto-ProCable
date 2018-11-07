@@ -144,16 +144,24 @@ public class Login extends javax.swing.JFrame {
         String password = new String(jPassword.getPassword());
         
         /*Comparar los datos correctos con los datos ingresados por el usuario*/
-        if((jTextFieldUser.getText().equals(usuario))&&(password.equals(contrasena))){
-            /*Si los datos son correctos, se creará y abrirá el menú principal*/
+        if((this.procable).buscarMail(jTextFieldUser.getText()) && (this.procable).buscarPassword(password)){
             JOptionPane.showMessageDialog(null, "Bienvenido Administrador.");
             MenuPrincipal menu = new MenuPrincipal(procable);
             menu.setVisible(true);
             dispose();
         }
         else{
-            /*Si los datos son incorrectos, se imprimira un mensaje por pantalla*/
-            JOptionPane.showMessageDialog(null, "Usuario ó Contraseña incorrecta.");
+            if((jTextFieldUser.getText().equals(usuario))&&(password.equals(contrasena))){
+                /*Si los datos son correctos, se creará y abrirá el menú principal*/
+                JOptionPane.showMessageDialog(null, "Bienvenido Administrador.");
+                MenuPrincipal menu = new MenuPrincipal(procable);
+                menu.setVisible(true);
+                dispose();
+            }
+            else{
+                /*Si los datos son incorrectos, se imprimira un mensaje por pantalla*/
+                JOptionPane.showMessageDialog(null, "Usuario ó Contraseña incorrecta.");
+            }
         }
     }//GEN-LAST:event_jbIniciarMouseClicked
 

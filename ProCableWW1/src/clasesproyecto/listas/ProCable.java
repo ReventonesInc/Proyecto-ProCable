@@ -93,4 +93,8 @@ public class ProCable {
     public boolean buscarPassword(String password){
         return personal.buscarPassword(password);
     }
+    
+    public boolean buscarMail(String username){
+        return personal.buscarMail(username);
+    }
 }

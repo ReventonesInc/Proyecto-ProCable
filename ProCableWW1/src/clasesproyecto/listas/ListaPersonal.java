@@ -174,6 +174,15 @@ public final class ListaPersonal {
         return false;
     }
     
+    public boolean buscarMail (String username){                                    //Método para buscar el mail del empleado
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara el mail del empleado con la que fue
+            if(personal.get(i).getCorreoElectronico().equals(username)){            //recibida por parametro
+                return true;
+            }
+        }
+        return false;
+    }
+    
     /*------------------------------------------------------------------------*/
     /* Métodos temporales para el uso de la interfaz grafica del proyecto
      * ProCable sin base de datos. La interfaz grafica 
