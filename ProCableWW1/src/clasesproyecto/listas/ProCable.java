@@ -2,6 +2,10 @@ package clasesproyecto.listas;
 
 import clasesproyecto.*;
 
+
+
+//LUCHO FLOJO CUULIAOOO CHUPALA MARACO
+
 public class ProCable {
     public ListaPersonal personal;
     public ListaCliente clientes;
