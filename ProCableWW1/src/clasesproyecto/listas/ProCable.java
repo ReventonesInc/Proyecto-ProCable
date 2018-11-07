@@ -81,4 +81,8 @@ public class ProCable {
     public void modificarPersonal(String nombre, String apellido, String rutNuevo, String rutViejo, String correoElectronico, String password){
         personal.modificarPersonal(rutViejo, new Personal(0, nombre, apellido, rutNuevo, correoElectronico, password));
     }
+    
+    public void mostrarPersonal(){
+        personal.mostrarPersonal();
+    }
 }

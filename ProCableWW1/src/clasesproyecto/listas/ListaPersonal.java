@@ -154,6 +154,17 @@ public final class ListaPersonal {
         personal.get(i).setPassword(modificado.getPassword());
     }
     
+    public void mostrarPersonal (){
+        for(int i = 0; i < tamano(); i++){
+            System.out.println("Nombre: "+personal.get(i).getNombre());
+            System.out.println("Apellido: "+personal.get(i).getApellido());
+            System.out.println("Rut: "+personal.get(i).getRut());
+            System.out.println("Mail: "+personal.get(i).getCorreoElectronico());
+            System.out.println("Password: "+personal.get(i).getPassword());
+            System.out.println("------------------------------------------");
+        }
+    }
+    
     /*------------------------------------------------------------------------*/
     //Métodos temporales para el uso sin archivo para la interfaz
     

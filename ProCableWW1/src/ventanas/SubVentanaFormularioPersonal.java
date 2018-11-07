@@ -197,6 +197,7 @@ public class SubVentanaFormularioPersonal extends javax.swing.JFrame {
                         else{
                             if(((this.procable).agregarPersonal(jTextNombre.getText(), jTextApellido.getText(), jTextRut.getText(), jTextMail.getText(), jTextPassword.getText())) == true){
                                 JOptionPane.showMessageDialog(null, "Empleado agregado con exito!");
+                                (this.procable).mostrarPersonal();
                                 OpcionPersonal submenu = new OpcionPersonal(procable);
                                 submenu.setVisible(true);
                                 dispose();

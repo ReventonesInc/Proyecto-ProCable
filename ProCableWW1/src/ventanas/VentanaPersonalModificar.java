@@ -58,11 +58,11 @@ public class VentanaPersonalModificar extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(428, 330));
+        setPreferredSize(new java.awt.Dimension(451, 360));
         setResizable(false);
 
         jPanelForm.setBackground(new java.awt.Color(51, 51, 51));
-        jPanelForm.setPreferredSize(new java.awt.Dimension(428, 330));
+        jPanelForm.setPreferredSize(new java.awt.Dimension(451, 350));
         jPanelForm.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel21.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -160,11 +160,11 @@ public class VentanaPersonalModificar extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelForm, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
+            .addComponent(jPanelForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelForm, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+            .addComponent(jPanelForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -206,6 +206,7 @@ public class VentanaPersonalModificar extends javax.swing.JFrame {
                         else{
                             (this.procable).modificarPersonal(jTextNombre.getText(), jTextApellido.getText(), jTextRut.getText(), this.rut, jTextMail.getText(), jTextPassword.getText());
                             JOptionPane.showMessageDialog(null, "Empleado modificado con exito!");
+                            (this.procable).mostrarPersonal();
                             OpcionPersonal submenu = new OpcionPersonal(procable);
                             submenu.setVisible(true);
                             dispose();
