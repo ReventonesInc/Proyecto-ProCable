@@ -127,7 +127,9 @@ public class OpcionPlan extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregarActionPerformed
-        //Agregar aquí
+        VentanaAgregarPlan form = new VentanaAgregarPlan(procable);
+        form.setVisible(true);
+        dispose();
     }//GEN-LAST:event_BtnAgregarActionPerformed
 
     private void BtnVolverAlMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVolverAlMenuActionPerformed

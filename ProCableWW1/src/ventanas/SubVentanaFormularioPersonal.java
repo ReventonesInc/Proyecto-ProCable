@@ -213,7 +213,8 @@ public class SubVentanaFormularioPersonal extends javax.swing.JFrame {
     }//GEN-LAST:event_jbAceptarActionPerformed
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
-        OpcionClientes submenu = new OpcionClientes(procable);
+        JOptionPane.showMessageDialog(null, "No se agregó el empleado!");
+        OpcionPersonal submenu = new OpcionPersonal(procable);
         submenu.setVisible(true);
         dispose();
     }//GEN-LAST:event_jbSalirActionPerformed
