@@ -12,14 +12,16 @@ import java.util.*;
 */
 
 public class Sucursal {
-    //private ListaFactura facturasSucursales;   
+    //private ListaFactura facturasSucursales;  
+    private int ID;
     private String nombreSucursal;
     private String direccionSurcursal;
     private String rutSucursal;
 
-    private HashMap<String, ListaFactura> facturasAnuales;
+    private HashMap<String, HashMap<String, ListaFactura>> facturasAnuales;
 
-    public Sucursal(String nombreSucursal, String direccionSurcursal, String rutSucursal) {
+    public Sucursal(int ID, String nombreSucursal, String direccionSurcursal, String rutSucursal) {
+        this.ID = ID;
         this.nombreSucursal = nombreSucursal;
         this.direccionSurcursal = direccionSurcursal;
         this.rutSucursal = rutSucursal;
@@ -49,4 +51,32 @@ public class Sucursal {
     public void setRutSucursal(String rutSucursal) {
         this.rutSucursal = rutSucursal;
     }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public void setFacturasAnuales(HashMap<String, HashMap<String, ListaFactura>> facturasAnuales) {
+        this.facturasAnuales = facturasAnuales;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public HashMap<String, HashMap<String, ListaFactura>> getFacturasAnuales() {
+        return facturasAnuales;
+    }
+    
+    
+    
+    public boolean equals(Sucursal comparado){
+        if(nombreSucursal.equals(comparado.getNombreSucursal())){
+            return true;
+        }
+        else{
+            return rutSucursal.equals(comparado.getRutSucursal());
+        }
+    }
+    
 }
