@@ -111,7 +111,7 @@ public final class ListaPersonal {
         }
         else {													//Si no esta vacia
             if(buscarPersonal(nuevoPersonal)!=null) {				//Busca el Personal
-            return false;									//Si lo encuentra retorna false
+                return false;									//Si lo encuentra retorna false
             }
             else {												//Si lo encuentra
                 personal.add(nuevoPersonal);					//Lo agrega al final

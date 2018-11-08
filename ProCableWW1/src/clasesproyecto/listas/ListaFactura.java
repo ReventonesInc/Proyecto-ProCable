@@ -23,6 +23,20 @@ public class ListaFactura {
         return facturas.size();
     }
     
+    public int indice(int idFactura){
+        if(estaVacio()){
+            return -1;
+        }
+        else{
+            for(int i = 0; i < tamano(); i++){
+                if(facturas.get(i).getIdFactura() == idFactura){
+                    return i;
+                }
+            }
+            return -1;
+        }
+    }
+    
     public Factura buscarFactura (int idFactura){
         if(estaVacio()){
             return null;
@@ -70,5 +84,22 @@ public class ListaFactura {
         }
     }
     
+    public float totalIngresosMes (){
+        float total = 0;
+        for(int i = 0; i < tamano(); i++){
+            total += facturas.get(i).getMontoPagado();
+        }        
+        return total;
+    }
     
+    public boolean eliminarFactura (int idFactura){
+        Factura buscado = buscarFactura(idFactura);        
+        if (buscado != null){
+            facturas.remove(buscado);
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
