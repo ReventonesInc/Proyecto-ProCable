@@ -99,6 +99,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jbPaquetes.setContentAreaFilled(false);
         jbPaquetes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jbPaquetes.setOpaque(true);
+        jbPaquetes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbPaquetesActionPerformed(evt);
+            }
+        });
         jMenuToggle.add(jbPaquetes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 190, 50));
 
         jbCerrarSesion.setBackground(new java.awt.Color(102, 0, 102));
@@ -107,7 +112,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jbCerrarSesion.setText("Cerrar Sesión");
         jbCerrarSesion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jbCerrarSesion.setOpaque(true);
         jbCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbCerrarSesionActionPerformed(evt);
@@ -203,6 +207,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menuPersonal.setVisible(true);
         dispose();
     }//GEN-LAST:event_jbAdministradores1ActionPerformed
+
+    private void jbPaquetesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPaquetesActionPerformed
+        OpcionPlan menuPlan = new OpcionPlan(procable);
+        menuPlan.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jbPaquetesActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
