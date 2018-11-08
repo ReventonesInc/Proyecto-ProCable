@@ -121,26 +121,21 @@ public final class ListaPersonal {
     }
 	
     public boolean eliminarPersonal (String rutPersonal) {		//Metodo para eliminar un Personal de la lista
-        if(estaVacio()) {										//Si la lista no esta vacia, retorna false
+        Personal buscado = buscarPersonal(rutPersonal);		//Se busca el Personal
+        if(buscado == null) {								//Si no se encuentra, retorna false
             return false;
         }
-	else {
-            Personal buscado = buscarPersonal(rutPersonal);		//En caso contrario, se busca el Personal
-            if(buscado == null) {								//Si no se encuentra, retorna false
-                return false;
+        else {
+            if(personal.get(tamano()-1).equals(buscado)){
+                personal.remove(buscado);
+                return true;
             }
             else {
-                if(personal.get(tamano()-1).equals(buscado)){
-                    personal.remove(buscado);
-                    return true;
+                for(int i = indice(buscado)+1; i < tamano(); i++) {
+                    this.personal.get(i).setID(personal.get(i).getID()-1);
                 }
-                else {
-                    for(int i = indice(buscado)+1; i < tamano(); i++) {
-                        this.personal.get(i).setID(personal.get(i).getID()-1);
-                    }
-                    personal.remove(buscado);
-                    return true;
-                }
+                personal.remove(buscado);
+                return true;
             }
         }
     }

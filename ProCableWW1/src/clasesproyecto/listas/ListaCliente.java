@@ -107,26 +107,21 @@ public class ListaCliente {
     }
 	
     public boolean eliminarCliente (String rutCliente) {		//Metodo para eliminar un cliente de la lista
-        if(estaVacio()) {										//Si la lista no esta vacia, retorna false
+    Cliente buscado = buscarCliente(rutCliente);		//Se busca el cliente   
+        if(buscado == null) {								//Si no se encuentra, retorna false
             return false;
         }
         else {
-            Cliente buscado = buscarCliente(rutCliente);		//En caso contrario, se busca el cliente
-            if(buscado == null) {								//Si no se encuentra, retorna false
-                return false;
+            if(clientes.get(tamano()-1).equals(buscado)){	//En caso de encontrarlo lo elimina y retorna true
+                clientes.remove(buscado);
+                return true;
             }
             else {
-                if(clientes.get(tamano()-1).equals(buscado)){	//En caso de encontrarlo lo elimina y retorna true
-                    clientes.remove(buscado);
-                    return true;
+                for(int i = indice(buscado)+1; i < tamano(); i++) {
+                    this.clientes.get(i).setID(clientes.get(i).getID()-1);
                 }
-                else {
-                    for(int i = indice(buscado)+1; i < tamano(); i++) {
-                        this.clientes.get(i).setID(clientes.get(i).getID()-1);
-                    }
-                    clientes.remove(buscado);
-                    return true;
-                }
+                clientes.remove(buscado);
+                return true;
             }
         }
     }
@@ -150,7 +145,6 @@ public class ListaCliente {
             System.out.println("Datos: "+ clientes.get(i).getCorreoElectronico());
         }
     }
-    //ctmre
     /*
     public Cliente clienteMasEndeudado(){
         for(int i = 0; i < tamano(); i++){

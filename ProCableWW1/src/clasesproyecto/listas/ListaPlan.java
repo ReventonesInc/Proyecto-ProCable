@@ -91,27 +91,23 @@ public class ListaPlan {
     }
 	
     public boolean eliminarPlan(String nombrePlan) {	//Metodo para eliminar planes, si no lo encuentra retorna false
-        if(estaVacio()) {								//Y si lo encuentra lo elimina y retorna true
+        Plan eliminar = buscarPlan(nombrePlan);
+        if(eliminar == null) {
             return false;
         }
-	else {
-            Plan eliminar = buscarPlan(nombrePlan);
-            if(eliminar == null) {
-		return false;
+        else {
+            if(planes.get(tamano()-1).equals(eliminar)){
+                planes.remove(eliminar);
+                return true;
             }
-            else {
-                if(planes.get(tamano()-1).equals(eliminar)){
-                    planes.remove(eliminar);
-                    return true;
-		}
-                else {
-                    for(int i = indice(eliminar)+1; i < tamano()-1; i++) {
-                        this.planes.get(i).setID(planes.get(i).getID()-1);
-                    }
-                    planes.remove(eliminar);
-                    return true;
+	    else {
+                for(int i = indice(eliminar)+1; i < tamano()-1; i++) {
+                    this.planes.get(i).setID(planes.get(i).getID()-1);
                 }
+                planes.remove(eliminar);
+                return true;
             }
         }
     }
+    
 }

@@ -106,26 +106,21 @@ public class ListaClienteContratado {
     }
 	
     public boolean eliminarClienteContratado(String rutClienteContratado) {
-	if(estaVacio()) {
+        Cliente buscado = buscarClienteContratado(rutClienteContratado);
+        if(buscado == null) {
             return false;
-	}
-	else {
-            Cliente buscado = buscarClienteContratado(rutClienteContratado);
-            if(buscado == null) {
-		return false;
+        }
+        else {
+            if(clientesContratados.get(tamano()-1).equals(buscado)){
+                clientesContratados.remove(buscado);
+                return true;
             }
             else {
-		if(clientesContratados.get(tamano()-1).equals(buscado)){
-                    clientesContratados.remove(buscado);
-                    return true;
-		}
-		else {
-                    for(int i = indice(buscado)+1; i < tamano(); i++) {
-			this.clientesContratados.get(i).setID(clientesContratados.get(i).getID()-1);
-                    }
-                    clientesContratados.remove(buscado);
-                    return true;
-		}
+                for(int i = indice(buscado)+1; i < tamano(); i++) {
+                    this.clientesContratados.get(i).setID(clientesContratados.get(i).getID()-1);
+                }
+                clientesContratados.remove(buscado);
+                return true;
             }
         }
     }
