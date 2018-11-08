@@ -89,6 +89,7 @@ public class VentanaPersonalEliminar extends javax.swing.JFrame {
         BtnEliminar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         BtnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         BtnEliminar.setText("Eliminar");
+        BtnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnEliminarActionPerformed(evt);
@@ -100,6 +101,7 @@ public class VentanaPersonalEliminar extends javax.swing.JFrame {
         BtnCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         BtnCancelar.setForeground(new java.awt.Color(255, 255, 255));
         BtnCancelar.setText("Cancelar");
+        BtnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnCancelarActionPerformed(evt);
@@ -163,6 +165,7 @@ public class VentanaPersonalEliminar extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnEliminarActionPerformed
 
     private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
+        JOptionPane.showMessageDialog(null, "No se eliminó el empleado!");
         OpcionPersonal submenu = new OpcionPersonal(procable);
         submenu.setVisible(true);
         dispose();

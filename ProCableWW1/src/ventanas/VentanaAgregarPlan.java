@@ -166,6 +166,7 @@ public class VentanaAgregarPlan extends javax.swing.JFrame {
                     int cantidadCanal = Integer.parseInt(jTextCanales.getText());
                     if((this.procable).agregarPlan(jTextNombre.getText(), valor, cantidadCanal) == true){
                         JOptionPane.showMessageDialog(null, "Plan agregado con exito!");
+                        (this.procable).mostrarPlanes();
                         OpcionPlan submenu = new OpcionPlan(procable);
                         submenu.setVisible(true);
                         dispose();

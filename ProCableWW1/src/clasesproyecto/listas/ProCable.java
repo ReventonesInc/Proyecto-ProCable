@@ -97,4 +97,8 @@ public class ProCable {
     public boolean buscarMail(String username){
         return personal.buscarMail(username);
     }
+    
+    public void mostrarPlanes(){
+        planes.mostrarPlan();
+    }
 }

@@ -110,4 +110,45 @@ public class ListaPlan {
         }
     }
     
+    public void mostrarPlan(){                                                          //Método para mostrar los planes registrados por consola
+        for(int i = 0; i < tamano(); i++){                                              //Se recorre la lista y se imprime los datos que poseen cada plan
+            System.out.println("Nombre: "+ planes.get(i).getNombrePlan());
+            System.out.println("Valor: "+ planes.get(i).getValorPlan());
+            System.out.println("Cantidad Canales: "+ planes.get(i).getCantCanales());
+            System.out.println("____________________________________________");
+        }
+    }
+    
+//-----------------------------------------------------------------------------------
+/* Métodos temporales para el uso de la interfaz grafica del proyecto
+ * ProCable sin base de datos. La interfaz grafica 
+ * está en la carpeta "ventanas".
+ */
+    
+    public String obtenerNombrePlan (String nombrePlan){                            //Método para obtener el nombre del plan según el nombre que se desea buscar
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara el nombre del plan con la que fue
+            if(planes.get(i).getNombrePlan().equals(nombrePlan)) {                  //recibida por parametro
+                return planes.get(i).getNombrePlan();                               //Retorna el nombre del plan
+            }
+        }
+        return null;
+    }
+    
+    public float obtenerValor (String nombrePlan){                                  //Método para obtener el valor o precio del plan según el nombre
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara el nombre del plan con la que fue
+            if(planes.get(i).getNombrePlan().equals(nombrePlan)){                   //recibida por parametro
+                return planes.get(i).getValorPlan();                                //Retorna el valor del plan
+            }
+        }
+        return 0;
+    }
+    
+    public int obtenerCantidadCanales (String nombrePlan){                          //Método para obtener la cantidad de canales que posee el plan según el nombre
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara el nombre del plan con la que fue
+            if(planes.get(i).getNombrePlan().equals(nombrePlan)){                   //recibida por parametro
+                return planes.get(i).getCantCanales();                              //Retorna la cantidad de canales del plan
+            }
+        }
+        return 0;
+    }
 }

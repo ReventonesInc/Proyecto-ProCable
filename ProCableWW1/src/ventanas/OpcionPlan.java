@@ -81,6 +81,11 @@ public class OpcionPlan extends javax.swing.JFrame {
         BtnEliminar.setContentAreaFilled(false);
         BtnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnEliminar.setOpaque(true);
+        BtnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarActionPerformed(evt);
+            }
+        });
         getContentPane().add(BtnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 210, 40));
 
         BtnVerMas.setBackground(new java.awt.Color(102, 0, 102));
@@ -137,6 +142,12 @@ public class OpcionPlan extends javax.swing.JFrame {
         menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_BtnVolverAlMenuActionPerformed
+
+    private void BtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarActionPerformed
+        VentanaBuscarPlanPorEliminar formnom = new VentanaBuscarPlanPorEliminar(procable);
+        formnom.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BtnEliminarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAgregar;
