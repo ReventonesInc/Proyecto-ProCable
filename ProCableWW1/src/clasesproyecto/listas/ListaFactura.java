@@ -37,7 +37,38 @@ public class ListaFactura {
         return null;
     }
     
-    public ArrayList<Factura> buscarFacturasCliente (String rutCliente){
+    public ArrayList<Factura> buscarFacturasCliente (String rutCliente){ //Funcionalidad propia
         
+        ArrayList<Factura> facturasCliente = new ArrayList<Factura>();
+        
+        if(estaVacio()){
+            return null;
+        }
+        else{
+            for(int i = 0; i < tamano(); i++){
+                if(facturas.get(i).getClienteAbonante().getRut().equals(rutCliente)){
+                    facturasCliente.add(facturas.get(i));
+                }
+            }
+        }
+        return facturasCliente;
     }
+    
+    public boolean agregarFactura (Factura nuevaFactura){
+        if(estaVacio()){
+            facturas.add(nuevaFactura);
+            return true;
+        }
+        else {
+            if(buscarFactura(nuevaFactura.getIdFactura()) != null){
+                return false;
+            }
+            else{
+                facturas.add(nuevaFactura);
+                return true;
+            }
+        }
+    }
+    
+    
 }
