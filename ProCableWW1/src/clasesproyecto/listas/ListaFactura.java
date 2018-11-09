@@ -14,6 +14,14 @@ public class ListaFactura {
     public ListaFactura(){
         this.facturas = new ArrayList<Factura>();
     }
+
+    public ArrayList<Factura> getFacturas() {
+        return facturas;
+    }
+
+    public void setFacturas(ArrayList<Factura> facturas) {
+        this.facturas = facturas;
+    }    
     
     public boolean estaVacio() {
         return facturas.isEmpty();
