@@ -18,7 +18,7 @@ public class Sucursal {
     private String direccionSurcursal;
     private String rutSucursal;
 
-    private HashMap<String, HashMap<String, ListaFactura>> facturasAnuales;
+    private HashMap<String, ListaMes> facturasAnuales;
 
     public Sucursal(int ID, String nombreSucursal, String direccionSurcursal, String rutSucursal) {
         this.ID = ID;
@@ -55,21 +55,11 @@ public class Sucursal {
     public void setID(int ID) {
         this.ID = ID;
     }
-
-    public void setFacturasAnuales(HashMap<String, HashMap<String, ListaFactura>> facturasAnuales) {
-        this.facturasAnuales = facturasAnuales;
-    }
-
+    
     public int getID() {
         return ID;
     }
 
-    public HashMap<String, HashMap<String, ListaFactura>> getFacturasAnuales() {
-        return facturasAnuales;
-    }
-    
-    
-    
     public boolean equals(Sucursal comparado){
         if(nombreSucursal.equals(comparado.getNombreSucursal())){
             return true;
@@ -79,4 +69,5 @@ public class Sucursal {
         }
     }
     
+
 }
