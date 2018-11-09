@@ -172,11 +172,11 @@ public class VentanaPersonalEliminar extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnCancelarActionPerformed
 
     public void insertarDatos(){
-        lblNombreEmp.setText((this.procable).personal.obtenerNombre(this.rut));
-        lblApellidoEmp.setText((this.procable).personal.obtenerApellido(this.rut));
-        lblRutEmp.setText((this.procable).personal.obtenerRut(this.rut));
-        lblMailEmp.setText((this.procable).personal.obtenerMail(this.rut));
-        lblContrasenaEmp.setText((this.procable).personal.obtenerPassword(this.rut));
+        lblNombreEmp.setText((this.procable).obtenerNombreEmpleado(rut));
+        lblApellidoEmp.setText((this.procable).obtenerApellidoEmpledo(rut));
+        lblRutEmp.setText(rut);
+        lblMailEmp.setText((this.procable).obtenerMailEmpleado(rut));
+        lblContrasenaEmp.setText((this.procable).obtenerPasswordEmpleado(rut));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

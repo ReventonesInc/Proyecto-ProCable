@@ -19,6 +19,8 @@ public class VentanaPersonalModificar extends javax.swing.JFrame {
     private String rut;
     /**
      * Creates new form VentanaPersonalModificar
+     * @param procable
+     * @param rut
      */
     public VentanaPersonalModificar(ProCable procable, String rut) {
         initComponents();
@@ -225,11 +227,11 @@ public class VentanaPersonalModificar extends javax.swing.JFrame {
     }//GEN-LAST:event_jbSalirActionPerformed
 
     public void insertarDatos(){
-        jTextNombre.setText((this.procable).personal.obtenerNombre(rut));
-        jTextApellido.setText((this.procable).personal.obtenerApellido(rut));
+        jTextNombre.setText((this.procable).obtenerNombreEmpleado(rut));
+        jTextApellido.setText((this.procable).obtenerApellidoEmpledo(rut));
         jTextRut.setText(this.rut);
-        jTextMail.setText((this.procable).personal.obtenerMail(rut));
-        jTextPassword.setText((this.procable).personal.obtenerPassword(rut));
+        jTextMail.setText((this.procable).obtenerMailEmpleado(rut));
+        jTextPassword.setText((this.procable).obtenerPasswordEmpleado(rut));
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

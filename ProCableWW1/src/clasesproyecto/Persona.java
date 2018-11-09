@@ -1,7 +1,7 @@
 package clasesproyecto;
 
 
-public class Persona {
+public abstract class Persona {
 	
     private int ID;
     private String nombre;

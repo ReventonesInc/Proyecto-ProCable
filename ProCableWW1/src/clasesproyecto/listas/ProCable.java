@@ -111,4 +111,30 @@ public class ProCable {
     public boolean buscarMail(String username){                                         //Método para bucar un mail de un empleado(considerado el username del login)
         return personal.buscarMail(username);                                           //Retorna true si lo encuentra, en el caso contrario retorna false
     }
+    
+    /*------------------------------------------------------------------------*/
+    /* Métodos temporales para el uso de la interfaz grafica del proyecto
+     * ProCable sin base de datos. La interfaz grafica 
+     * está en la carpeta "ventanas".
+     */
+    
+    public String obtenerNombreEmpleado(String rut){
+        return personal.obtenerNombre(rut);
+    }
+    
+    public String obtenerApellidoEmpledo(String rut){
+        return personal.obtenerApellido(rut);
+    }
+    
+    public String obtenerRutEmpleado(String rut){
+        return personal.obtenerRut(rut);
+    }
+    
+    public String obtenerMailEmpleado(String rut){
+        return personal.obtenerMail(rut);
+    }
+    
+    public String obtenerPasswordEmpleado(String rut){
+        return personal.obtenerPassword(rut);
+    }
 }
