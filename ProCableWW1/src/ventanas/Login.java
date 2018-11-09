@@ -19,7 +19,6 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
-        
         this.procable = procable;
         setIconImage(new ImageIcon(getClass().getResource("/Imágenes/network.png")).getImage());
     }
