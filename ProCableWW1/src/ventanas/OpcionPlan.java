@@ -7,6 +7,7 @@ package ventanas;
 
 import clasesproyecto.listas.ProCable;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -144,9 +145,14 @@ public class OpcionPlan extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnVolverAlMenuActionPerformed
 
     private void BtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarActionPerformed
-        VentanaBuscarPlanPorEliminar formnom = new VentanaBuscarPlanPorEliminar(procable);
-        formnom.setVisible(true);
-        dispose();
+        if((this.procable).planes == null){
+            JOptionPane.showMessageDialog(null, "No hay planes por eliminar!");
+        }
+        else{
+            VentanaBuscarPlanPorEliminar formnom = new VentanaBuscarPlanPorEliminar(procable);
+            formnom.setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_BtnEliminarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
