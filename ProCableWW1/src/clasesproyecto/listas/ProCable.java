@@ -28,35 +28,26 @@ public class ProCable {
 	
 //---------------------------- Metodos -----------------------------------------//
 	
-    public boolean agregarCliente(String nombre, String apellido, String rut, String correoElectronico, String telefono) {          //Método para agregar un cliente según los datos entregados por parámetros
-        if(clientes.estaVacio()) {                                                                                                  //Se verifica si el Arraylist está vacio, si esta vacio, el cliente se agregará en la primera posición
-            return clientes.agregarCliente(new Cliente(1, nombre, apellido, rut, correoElectronico, telefono));                     //Retorna un true si el cliente se agregó de forma correcta, si es el caso contrario retorna false
-            //Se tiene que agregar el cliente a la lista de clientes contratos EN PLAN.
+    public boolean agregarCliente(String planContratado, String nombre, String apellido, String rut, String correoElectronico, String telefono) {          //Método para agregar un cliente según los datos entregados por parámetros
+        if(clientes.estaVacio()) {
+            return clientes.agregarCliente(new Cliente(1, planContratado, nombre, apellido, rut, correoElectronico, telefono));                     //Retorna un true si el cliente se agregó de forma correcta, si es el caso contrario retorna false
 	}
 	else {                                                                                                                      //Si el Arraylist esta no esta vacio, el cliente se agregará en la última casilla de éste.
-            return clientes.agregarCliente(new Cliente(clientes.tamano(), nombre, apellido, rut, correoElectronico, telefono));
-            //Se tiene que agregar el cliente a la lista de clientes contratos EN PLAN.
+            return clientes.agregarCliente(new Cliente(clientes.tamano(), planContratado, nombre, apellido, rut, correoElectronico, telefono));
         }
     }
 	
     public boolean eliminarCliente(String rutCliente) {                                                                             //Método para eliminar un cliente según el rut
-        boolean flag = false;                                                                                                       //Se elimina de lista de clientes contratados y de la lista de cliente, y retorna un booleano, si el cliente se eliminó exitosamente
-        for(int i = 0; i < planes.getPlanes().size(); i++){                                                                         //retornará true, en el caso contrario será false
-            if(planes.getPlanes().get(i).getClientesContratados().eliminarClienteContratado(rutCliente)){
-                flag = true;
-            }
-        }
-        return flag && clientes.eliminarCliente(rutCliente);                                   
+        return clientes.eliminarCliente(rutCliente);                                   
     }
     
-    public void modificarCliente(String rutViejo,String nombre, String apellido, String rutNuevo, String correoElectronico, String telefono){                                   //Método para modificar un cliente según los datos entregados por parámetro
-        clientes.modificarCliente(rutViejo,new Cliente(0 ,nombre, apellido, rutNuevo, correoElectronico, telefono));                                                            //Se modifica el cliente en lista clientes y lista de clientes de contratados
-        for(int i = 0; i < planes.tamano(); i++){
-            if(planes.getPlanes().get(i).getClientesContratados().buscarClienteContratado(rutViejo) != null){
-                planes.getPlanes().get(i).getClientesContratados().modificarCliente(rutViejo, new Cliente(0 ,nombre, apellido, rutNuevo, correoElectronico, telefono));
-            }
-        }
+    public void modificarCliente(String rutViejo, String planContratado, String nombre, String apellido, String rutNuevo, String correoElectronico, String telefono){                                   //Método para modificar un cliente según los datos entregados por parámetro
+        clientes.modificarCliente(rutViejo,new Cliente(0, planContratado, nombre, apellido, rutNuevo, correoElectronico, telefono));                                                            //Se modifica el cliente en lista clientes y lista de clientes de contratados
     }    
+    
+    public boolean buscarCliente(String rut){
+        return clientes.buscarClienteMenu(rut);
+    }
     
     public void mostrarCliente(){                                                       //Método para mostrar todos los clientes por consola
         clientes.mostrarCliente();                                                      //Se imprime los datos de los clientes de forma ordenada.
@@ -104,12 +95,12 @@ public class ProCable {
         personal.mostrarPersonal();                                                     //Se imprimirá los datos de cada empleado de forma ordenada
     }
     
-    public boolean buscarPassword(String password){                                     //Método para buscar una contraseña de un empleado
-        return personal.buscarPassword(password);                                       //Retorna true si lo encuentra, en el caso contrario retorna false
+    public String VerificarLogin(String username, String password){                     //Método para verificar los datos para iniciar sesión
+        return personal.IngresarLogin(username, password);                              //Se buscan los datos ingresados por parámetros y retorna un booleano
     }
     
-    public boolean buscarMail(String username){                                         //Método para bucar un mail de un empleado(considerado el username del login)
-        return personal.buscarMail(username);                                           //Retorna true si lo encuentra, en el caso contrario retorna false
+    public String SalirLogin(String username, String password){                         //Método para verificar los datos para cerrar sesión correctamente
+        return personal.SalirLogin(username, password);                                 //Se buscan los datos ingresados por parámetros y retorna un booleano
     }
     
     /*------------------------------------------------------------------------*/
@@ -137,4 +128,25 @@ public class ProCable {
     public String obtenerPasswordEmpleado(String rut){
         return personal.obtenerPassword(rut);
     }
-}
+    
+    public String obtenerNombreCliente(String rut){
+        return clientes.obtenerNombre(rut);
+    }
+    
+    public String obtenerApellidoCliente(String rut){
+        return clientes.obtenerApellido(rut);
+    }
+    
+    public String obtenerMailCliente(String rut){
+        return clientes.obtenerMail(rut);
+    }
+    
+    public String obtenerTelefonoCliente(String rut){
+        return clientes.obtenerTelefono(rut);
+    }
+    
+    public String obtenerPlanContratadoCliente(String rut){
+        return clientes.obtenerPlanContratado(rut);
+    }
+}   
+

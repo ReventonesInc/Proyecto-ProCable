@@ -23,6 +23,7 @@ public class SubVentanaFormularioCliente extends javax.swing.JFrame {
         this.procable = procable;
         /*Para poder cargar la imagen del icono*/
         this.setIconImage(new ImageIcon(getClass().getResource("/Imágenes/network.png")).getImage());
+        insertarDatosComboBox();
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -31,20 +32,20 @@ public class SubVentanaFormularioCliente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        lblNombre = new javax.swing.JLabel();
+        lblPlanCliente = new javax.swing.JLabel();
         lblApellido = new javax.swing.JLabel();
         lblRut = new javax.swing.JLabel();
         lblTelefono = new javax.swing.JLabel();
         lblMail = new javax.swing.JLabel();
         jTextNombre = new javax.swing.JTextField();
-        lblDireccion = new javax.swing.JLabel();
         jTextApellido = new javax.swing.JTextField();
         jTextRut = new javax.swing.JTextField();
         jTextTelefono = new javax.swing.JTextField();
         jTextMail = new javax.swing.JTextField();
-        jTextDireccion = new javax.swing.JTextField();
         jbAceptar = new javax.swing.JButton();
         jbSalir = new javax.swing.JButton();
+        lblNombre1 = new javax.swing.JLabel();
+        jComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -62,9 +63,9 @@ public class SubVentanaFormularioCliente extends javax.swing.JFrame {
         jLabel2.setText("___________________________________________________");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
-        lblNombre.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombre.setText("Nombre:");
-        jPanel1.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 60, 30));
+        lblPlanCliente.setForeground(new java.awt.Color(255, 255, 255));
+        lblPlanCliente.setText("Plan:");
+        jPanel1.add(lblPlanCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 30, 30));
 
         lblApellido.setForeground(new java.awt.Color(255, 255, 255));
         lblApellido.setText("Apellido:");
@@ -86,10 +87,6 @@ public class SubVentanaFormularioCliente extends javax.swing.JFrame {
         jTextNombre.setForeground(new java.awt.Color(255, 255, 255));
         jTextNombre.setSelectionColor(new java.awt.Color(102, 0, 102));
         jPanel1.add(jTextNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 140, -1));
-
-        lblDireccion.setForeground(new java.awt.Color(255, 255, 255));
-        lblDireccion.setText("Dirección:");
-        jPanel1.add(lblDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, 30));
 
         jTextApellido.setBackground(new java.awt.Color(51, 51, 51));
         jTextApellido.setForeground(new java.awt.Color(255, 255, 255));
@@ -121,11 +118,6 @@ public class SubVentanaFormularioCliente extends javax.swing.JFrame {
         });
         jPanel1.add(jTextMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 160, -1));
 
-        jTextDireccion.setBackground(new java.awt.Color(51, 51, 51));
-        jTextDireccion.setForeground(new java.awt.Color(255, 255, 255));
-        jTextDireccion.setSelectionColor(new java.awt.Color(102, 0, 102));
-        jPanel1.add(jTextDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 210, -1));
-
         jbAceptar.setBackground(new java.awt.Color(102, 0, 102));
         jbAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jbAceptar.setForeground(new java.awt.Color(255, 255, 255));
@@ -135,7 +127,7 @@ public class SubVentanaFormularioCliente extends javax.swing.JFrame {
                 jbAceptarActionPerformed(evt);
             }
         });
-        jPanel1.add(jbAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 130, 30));
+        jPanel1.add(jbAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 130, 30));
 
         jbSalir.setBackground(new java.awt.Color(102, 0, 102));
         jbSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -146,7 +138,20 @@ public class SubVentanaFormularioCliente extends javax.swing.JFrame {
                 jbSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(jbSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 130, 30));
+        jPanel1.add(jbSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 130, 30));
+
+        lblNombre1.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombre1.setText("Nombre:");
+        jPanel1.add(lblNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 60, 30));
+
+        jComboBox.setBackground(new java.awt.Color(51, 51, 51));
+        jComboBox.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 120, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -171,7 +176,7 @@ public class SubVentanaFormularioCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextMailActionPerformed
 
     private void jbAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAceptarActionPerformed
-        if(((this.procable).agregarCliente(jTextNombre.getText(), jTextApellido.getText(), jTextRut.getText(), jTextMail.getText(), jTextTelefono.getText()) == true)){
+        if(((this.procable).agregarCliente(jComboBox.getSelectedItem().toString(),jTextNombre.getText(), jTextApellido.getText(), jTextRut.getText(), jTextMail.getText(), jTextTelefono.getText()) == true)){
             JOptionPane.showMessageDialog(null, "Cliente agregado con exito!");
             (this.procable).mostrarCliente();
             OpcionClientes submenu = new OpcionClientes(procable);
@@ -189,12 +194,22 @@ public class SubVentanaFormularioCliente extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jbSalirActionPerformed
 
+    private void jComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxActionPerformed
+
+    public void insertarDatosComboBox(){
+        for(int i = 0; i < (this.procable).planes.tamano(); i++){
+            jComboBox.addItem((this.procable).planes.getPlanes().get(i).getNombrePlan());
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JComboBox<String> jComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextApellido;
-    private javax.swing.JTextField jTextDireccion;
     private javax.swing.JTextField jTextMail;
     private javax.swing.JTextField jTextNombre;
     private javax.swing.JTextField jTextRut;
@@ -202,9 +217,9 @@ public class SubVentanaFormularioCliente extends javax.swing.JFrame {
     private javax.swing.JButton jbAceptar;
     private javax.swing.JButton jbSalir;
     private javax.swing.JLabel lblApellido;
-    private javax.swing.JLabel lblDireccion;
     private javax.swing.JLabel lblMail;
-    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblNombre1;
+    private javax.swing.JLabel lblPlanCliente;
     private javax.swing.JLabel lblRut;
     private javax.swing.JLabel lblTelefono;
     // End of variables declaration//GEN-END:variables

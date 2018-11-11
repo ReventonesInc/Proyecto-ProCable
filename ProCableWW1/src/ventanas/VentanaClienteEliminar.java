@@ -13,15 +13,14 @@ import javax.swing.JOptionPane;
  *
  * @author XavierKrostya
  */
-public class VentanaPersonalEliminar extends javax.swing.JFrame {
-    
+public class VentanaClienteEliminar extends javax.swing.JFrame {
+
     private ProCable procable;
     private String rut;
-    
     /**
-     * Creates new form VentanaPersonalEliminar
+     * Creates new form VentanaClienteEliminar
      */
-    public VentanaPersonalEliminar(ProCable procable, String rut) {
+    public VentanaClienteEliminar(ProCable procable, String rut) {
         initComponents();
         this.setLocationRelativeTo(null);
         setResizable(false);
@@ -42,19 +41,21 @@ public class VentanaPersonalEliminar extends javax.swing.JFrame {
     private void initComponents() {
 
         lblWorld1 = new javax.swing.JLabel();
-        lblContrasena = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
         lblApellido = new javax.swing.JLabel();
         lblRut = new javax.swing.JLabel();
-        BtnEliminar = new javax.swing.JButton();
-        BtnCancelar = new javax.swing.JButton();
         lblMail = new javax.swing.JLabel();
-        lblContrasenaEmp = new javax.swing.JLabel();
-        lblNombre = new javax.swing.JLabel();
+        lblPlanContratado = new javax.swing.JLabel();
+        lblTelefono1 = new javax.swing.JLabel();
         lblNombreEmp = new javax.swing.JLabel();
         lblApellidoEmp = new javax.swing.JLabel();
         lblRutEmp = new javax.swing.JLabel();
         lblMailEmp = new javax.swing.JLabel();
+        lblPlanEmp = new javax.swing.JLabel();
+        lblTelefonoEmp = new javax.swing.JLabel();
+        BtnEliminar = new javax.swing.JButton();
+        BtnCancelar = new javax.swing.JButton();
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,28 +63,73 @@ public class VentanaPersonalEliminar extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblWorld1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/user.png"))); // NOI18N
-        getContentPane().add(lblWorld1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 140, 160));
-
-        lblContrasena.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        lblContrasena.setForeground(new java.awt.Color(255, 255, 255));
-        lblContrasena.setText("Contraseña:");
-        getContentPane().add(lblContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
+        lblWorld1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/clients.png"))); // NOI18N
+        getContentPane().add(lblWorld1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 140, 160));
 
         lblTitulo.setFont(new java.awt.Font("Dialog", 0, 22)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setText("¿Seguro que lo desea eliminar?");
-        getContentPane().add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 310, -1));
+        getContentPane().add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 310, -1));
+
+        lblNombre.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombre.setText("Nombre:");
+        getContentPane().add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         lblApellido.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         lblApellido.setForeground(new java.awt.Color(255, 255, 255));
         lblApellido.setText("Apellido:");
-        getContentPane().add(lblApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+        getContentPane().add(lblApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
         lblRut.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         lblRut.setForeground(new java.awt.Color(255, 255, 255));
         lblRut.setText("Rut:");
-        getContentPane().add(lblRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
+        getContentPane().add(lblRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
+
+        lblMail.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblMail.setForeground(new java.awt.Color(255, 255, 255));
+        lblMail.setText("Mail:");
+        getContentPane().add(lblMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
+
+        lblPlanContratado.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblPlanContratado.setForeground(new java.awt.Color(255, 255, 255));
+        lblPlanContratado.setText("Plan contratado:");
+        getContentPane().add(lblPlanContratado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
+
+        lblTelefono1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblTelefono1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTelefono1.setText("Telefono:");
+        getContentPane().add(lblTelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
+
+        lblNombreEmp.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblNombreEmp.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreEmp.setText("Javier Ignacio");
+        getContentPane().add(lblNombreEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, -1));
+
+        lblApellidoEmp.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblApellidoEmp.setForeground(new java.awt.Color(255, 255, 255));
+        lblApellidoEmp.setText("Ortiz Diaz");
+        getContentPane().add(lblApellidoEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, -1, -1));
+
+        lblRutEmp.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblRutEmp.setForeground(new java.awt.Color(255, 255, 255));
+        lblRutEmp.setText("20.181.368-9");
+        getContentPane().add(lblRutEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, -1));
+
+        lblMailEmp.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblMailEmp.setForeground(new java.awt.Color(255, 255, 255));
+        lblMailEmp.setText("jav_ignacio@live.cl");
+        getContentPane().add(lblMailEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, -1, -1));
+
+        lblPlanEmp.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblPlanEmp.setForeground(new java.awt.Color(255, 255, 255));
+        lblPlanEmp.setText("Pack");
+        getContentPane().add(lblPlanEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, -1, -1));
+
+        lblTelefonoEmp.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblTelefonoEmp.setForeground(new java.awt.Color(255, 255, 255));
+        lblTelefonoEmp.setText("988136613");
+        getContentPane().add(lblTelefonoEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, -1, -1));
 
         BtnEliminar.setBackground(new java.awt.Color(102, 0, 102));
         BtnEliminar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -109,41 +155,6 @@ public class VentanaPersonalEliminar extends javax.swing.JFrame {
         });
         getContentPane().add(BtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, 120, -1));
 
-        lblMail.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        lblMail.setForeground(new java.awt.Color(255, 255, 255));
-        lblMail.setText("Mail:");
-        getContentPane().add(lblMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
-
-        lblContrasenaEmp.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        lblContrasenaEmp.setForeground(new java.awt.Color(255, 255, 255));
-        lblContrasenaEmp.setText("javier321123");
-        getContentPane().add(lblContrasenaEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 420, -1, -1));
-
-        lblNombre.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        lblNombre.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombre.setText("Nombre:");
-        getContentPane().add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
-
-        lblNombreEmp.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        lblNombreEmp.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreEmp.setText("Javier Ignacio");
-        getContentPane().add(lblNombreEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
-
-        lblApellidoEmp.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        lblApellidoEmp.setForeground(new java.awt.Color(255, 255, 255));
-        lblApellidoEmp.setText("Ortiz Diaz");
-        getContentPane().add(lblApellidoEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, -1, -1));
-
-        lblRutEmp.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        lblRutEmp.setForeground(new java.awt.Color(255, 255, 255));
-        lblRutEmp.setText("20.181.368-9");
-        getContentPane().add(lblRutEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, -1, -1));
-
-        lblMailEmp.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        lblMailEmp.setForeground(new java.awt.Color(255, 255, 255));
-        lblMailEmp.setText("jav_ignacio@live.cl");
-        getContentPane().add(lblMailEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, -1, -1));
-
         lblFondo.setForeground(new java.awt.Color(102, 102, 102));
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/fondoMoradoP.jpg"))); // NOI18N
         lblFondo.setPreferredSize(new java.awt.Dimension(370, 540));
@@ -153,46 +164,48 @@ public class VentanaPersonalEliminar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarActionPerformed
-        if(((this.procable).eliminarPersonal(this.rut)) == true){
-            JOptionPane.showMessageDialog(null, "Empleado eliminado con exito!");
-            OpcionPersonal submenu = new OpcionPersonal(procable);
+        if(((this.procable).eliminarCliente(rut)) == true){
+            JOptionPane.showMessageDialog(null, "Cliente eliminado con exito!");
+            OpcionClientes submenu = new OpcionClientes(procable);
             submenu.setVisible(true);
             dispose();
         }
         else{
-            JOptionPane.showMessageDialog(null, "Ocurrió un error al eliminar el empleado!");
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al eliminar el cliente!");
         }
     }//GEN-LAST:event_BtnEliminarActionPerformed
 
     private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
-        JOptionPane.showMessageDialog(null, "No se eliminó el empleado!");
-        OpcionPersonal submenu = new OpcionPersonal(procable);
+        JOptionPane.showMessageDialog(null, "No se eliminó el cliente!");
+        OpcionClientes submenu = new OpcionClientes(procable);
         submenu.setVisible(true);
         dispose();
     }//GEN-LAST:event_BtnCancelarActionPerformed
 
     public void insertarDatos(){
-        lblNombreEmp.setText((this.procable).obtenerNombreEmpleado(rut));
-        lblApellidoEmp.setText((this.procable).obtenerApellidoEmpledo(rut));
+        lblNombreEmp.setText((this.procable).obtenerNombreCliente(rut));
+        lblApellidoEmp.setText((this.procable).obtenerApellidoCliente(rut));
         lblRutEmp.setText(rut);
-        lblMailEmp.setText((this.procable).obtenerMailEmpleado(rut));
-        lblContrasenaEmp.setText((this.procable).obtenerPasswordEmpleado(rut));
+        lblMailEmp.setText((this.procable).obtenerMailCliente(rut));
+        lblTelefonoEmp.setText((this.procable).obtenerTelefonoCliente(rut));
+        lblPlanEmp.setText((this.procable).obtenerPlanContratadoCliente(rut));
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCancelar;
     private javax.swing.JButton BtnEliminar;
     private javax.swing.JLabel lblApellido;
     private javax.swing.JLabel lblApellidoEmp;
-    private javax.swing.JLabel lblContrasena;
-    private javax.swing.JLabel lblContrasenaEmp;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblMail;
     private javax.swing.JLabel lblMailEmp;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblNombreEmp;
+    private javax.swing.JLabel lblPlanContratado;
+    private javax.swing.JLabel lblPlanEmp;
     private javax.swing.JLabel lblRut;
     private javax.swing.JLabel lblRutEmp;
+    private javax.swing.JLabel lblTelefono1;
+    private javax.swing.JLabel lblTelefonoEmp;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblWorld1;
     // End of variables declaration//GEN-END:variables

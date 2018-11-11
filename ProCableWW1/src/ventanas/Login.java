@@ -143,8 +143,8 @@ public class Login extends javax.swing.JFrame {
         String password = new String(jPassword.getPassword());
         
         /*Comparar los datos correctos con los datos ingresados por el usuario*/
-        if((this.procable).buscarMail(jTextFieldUser.getText()) && (this.procable).buscarPassword(password)){
-            JOptionPane.showMessageDialog(null, "Bienvenido Administrador.");
+        if((this.procable).VerificarLogin(jTextFieldUser.getText(), password) != null){
+            JOptionPane.showMessageDialog(null,(this.procable).VerificarLogin(jTextFieldUser.getText(), password));
             MenuPrincipal menu = new MenuPrincipal(procable);
             menu.setVisible(true);
             dispose();

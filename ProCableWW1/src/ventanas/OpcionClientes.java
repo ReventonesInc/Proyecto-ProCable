@@ -6,6 +6,7 @@ package ventanas;
 
 import javax.swing.ImageIcon;
 import clasesproyecto.listas.*;
+import javax.swing.JOptionPane;
 
 public class OpcionClientes extends javax.swing.JFrame {
     private ProCable procable;
@@ -140,9 +141,15 @@ public class OpcionClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_jbSalirActionPerformed
 
     private void BtnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarClienteActionPerformed
-        VentanaRutAgregarCliente ventanarut = new VentanaRutAgregarCliente(procable);
-        ventanarut.setVisible(true);
-        dispose();
+        
+        if((this.procable).clientes.estaVacio()){
+            JOptionPane.showMessageDialog(null, "No hay clientes por eliminar!");
+        }
+        else{
+            VentanaRutEliminarCliente ventanarut = new VentanaRutEliminarCliente(procable);
+            ventanarut.setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_BtnEliminarClienteActionPerformed
 
     private void BtnMostrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarClienteActionPerformed
@@ -150,9 +157,15 @@ public class OpcionClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnMostrarClienteActionPerformed
 
     private void BtnAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregarClienteActionPerformed
-        SubVentanaFormularioCliente formulario = new SubVentanaFormularioCliente(procable);
-        formulario.setVisible(true);
-        dispose();
+        
+        if((this.procable).planes.estaVacio()){
+            JOptionPane.showMessageDialog(null, "No hay planes registrados, agregue un plan antes de agregar un cliente!");
+        }
+        else{
+            SubVentanaFormularioCliente formulario = new SubVentanaFormularioCliente(procable);
+            formulario.setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_BtnAgregarClienteActionPerformed
 
     private void BtnVolverAlMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVolverAlMenuActionPerformed

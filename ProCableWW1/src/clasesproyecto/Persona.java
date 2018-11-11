@@ -1,7 +1,8 @@
 package clasesproyecto;
 
+import Interfaces.Verificar;
 
-public abstract class Persona {
+public abstract class Persona implements Verificar{
 	
     private int ID;
     private String nombre;
@@ -67,5 +68,14 @@ public abstract class Persona {
         Persona otro = (Persona)p;
         return (nombre.equals(otro.getNombre())) && (apellido.equals(otro.getApellido())) && (rut.equals(otro.getRut()));
     }
+    
+    @Override
+    public String ingresar(){
+        return "Bienvenido "+this.nombre+" "+this.apellido+"!";
+    }
 
+    @Override
+    public String salir(){
+        return "Cerrando sesión de "+this.nombre+" "+this.apellido+"!";
+    }
 }

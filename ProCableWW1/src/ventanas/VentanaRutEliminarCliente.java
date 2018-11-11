@@ -8,14 +8,14 @@ import javax.swing.ImageIcon;
 import clasesproyecto.listas.ProCable;
 import javax.swing.JOptionPane;
 
-public class VentanaRutAgregarCliente extends javax.swing.JFrame {
+public class VentanaRutEliminarCliente extends javax.swing.JFrame {
     
     private ProCable procable;
     /**
      * Crear un nuevo formulario SubMenuCliente
      * Constructor SubMenuCliente
      */
-    public VentanaRutAgregarCliente(ProCable procable) {
+    public VentanaRutEliminarCliente(ProCable procable) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -97,15 +97,18 @@ public class VentanaRutAgregarCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAceptarActionPerformed
-        if(((this.procable).eliminarCliente(jTextRut.getText())) == true){
-             JOptionPane.showMessageDialog(null, "Cliente fue eliminado con exito!");
-            (this.procable).mostrarCliente();
-            OpcionClientes menuClientes = new OpcionClientes(procable);
-            menuClientes.setVisible(true);
-            dispose();
+        if(jTextRut.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Porfavor, ingrese un RUT!");
         }
         else{
-            JOptionPane.showMessageDialog(null, "Ocurrió un error al eliminar el cliente!");
+            if((this.procable).buscarCliente(jTextRut.getText()) == true){
+                VentanaClienteEliminar submenu = new VentanaClienteEliminar(procable,jTextRut.getText());
+                submenu.setVisible(true);
+                dispose();
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "El RUT que ingresó no existe!");
+            }
         }
     }//GEN-LAST:event_jbAceptarActionPerformed
 

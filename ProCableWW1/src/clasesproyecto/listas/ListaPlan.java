@@ -44,6 +44,20 @@ public class ListaPlan {
             return -1;									
 	}
     }
+    
+    public int indice(String nombre){
+        if(estaVacio()) {						
+            return -1;									
+	}
+	else {								
+            for(int i = 0; i < tamano(); i++) {	
+		if(planes.get(i).getNombrePlan().equals(nombre)) {
+                    return i;
+		}
+            }
+            return -1;									
+	}
+    }
 	
 	
     public Plan buscarPlan(Plan buscado) {				//Metodo busqueda del plan, retorna null si esta vacia o no lo encuentra

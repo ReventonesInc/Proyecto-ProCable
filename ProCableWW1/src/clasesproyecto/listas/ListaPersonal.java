@@ -160,22 +160,22 @@ public final class ListaPersonal {
         }
     }
     
-    public boolean buscarPassword (String passwordBuscar){                          //Método para buscar la contraseña del empleado
-        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara la contraseña del empleado con la que fue
-            if(personal.get(i).getPassword().equals(passwordBuscar)){               //recibida por parametro
-                return true;
+    public String IngresarLogin(String username, String password){
+        for(int i = 0; i < tamano(); i++){
+            if((personal.get(i).getPassword().equals(password))&&(personal.get(i).getCorreoElectronico().equals(username))){
+                return personal.get(i).ingresar();
             }
         }
-        return false;
+        return null;
     }
     
-    public boolean buscarMail (String username){                                    //Método para buscar el mail del empleado
-        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara el mail del empleado con la que fue
-            if(personal.get(i).getCorreoElectronico().equals(username)){            //recibida por parametro
-                return true;
+    public String SalirLogin(String username, String password){
+        for(int i = 0; i < tamano(); i++){
+            if((personal.get(i).getPassword().equals(password))&&(personal.get(i).getCorreoElectronico().equals(username))){
+                return personal.get(i).salir();
             }
         }
-        return false;
+        return null;
     }
     
     /*------------------------------------------------------------------------*/

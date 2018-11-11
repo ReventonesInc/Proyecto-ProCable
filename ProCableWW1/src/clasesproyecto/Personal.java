@@ -19,4 +19,13 @@ public class Personal extends Persona {
 	this.password = password;
     }
 
+    @Override
+    public String ingresar() {
+        return super.ingresar();
+    }
+
+    @Override
+    public String salir() {
+        return super.salir();
+    }
 }

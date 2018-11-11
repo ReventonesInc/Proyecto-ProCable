@@ -89,7 +89,21 @@ public class ListaCliente {
             return null;										//En caso contrario retorna null, ya que no encontro el rut
         }
     }
-	
+    
+    public boolean buscarClienteMenu(String rutCliente){
+        if(estaVacio()) {										//Si la lista esta vacia
+            return false;										//No se encuentra ningun rut que coincida y retorna null
+        }
+        else {													//Sino, la lista no esta vacia y hay que recorrela
+            for(int i = 0; i < tamano(); i++) {
+                if(clientes.get(i).getRut().equals(rutCliente)) {	//Busca el rut en el ArrayList esperando una coincidencia
+                    return true;							//Si lo encuentra, retorna el cliente con dicho rut
+                }
+            }
+            return false;										//En caso contrario retorna null, ya que no encontro el rut
+        }
+    }
+    
     public boolean agregarCliente(Cliente nuevoCliente) {
         if(estaVacio()) {										//Si la lista esta vacia
             clientes.add(nuevoCliente);							//Agrega el cliente al final
@@ -143,6 +157,7 @@ public class ListaCliente {
             System.out.println("Datos: "+ clientes.get(i).getRut());
             System.out.println("Datos: "+ clientes.get(i).getTelefono());
             System.out.println("Datos: "+ clientes.get(i).getCorreoElectronico());
+            System.out.println("Datos: "+ clientes.get(i).getPlanContratado());
         }
     }
     /*
@@ -152,7 +167,65 @@ public class ListaCliente {
         }
     }
     */
+
+    /*------------------------------------------------------------------------*/
+    /* Métodos temporales para el uso de la interfaz grafica del proyecto
+     * ProCable sin base de datos. La interfaz grafica 
+     * está en la carpeta "ventanas".
+     */
     
-//OJOOO RECORDAR QUE LOS CLIENTES NO PUEDEN SER AÑADIDOS SI NO HAY PLANESSSS
+    public String obtenerNombre (String rut){                                       //Método para obtener el nombre del cliente según el rut ingresado
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara el rut del cliente con la que fue
+            if(clientes.get(i).getRut().equals(rut)) {                              //recibida por parametro
+                return clientes.get(i).getNombre();                                 //Retorna el nombre del cliente
+            }
+        }
+        return null;
+    }
+    
+    public String obtenerApellido (String rut){                                     //Método para obtener el apellido del cliente según el rut ingresado
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara el rut del cliente con la que fue
+            if(clientes.get(i).getRut().equals(rut)) {                              //recibida por parametro
+                return clientes.get(i).getApellido();                               //Retorna el apellido del cliente
+            }
+        }
+        return null;
+    }
+    
+    public String obtenerRut (String rut){                                          //Método para obtener el RUT del cliente según el rut ingresado
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara el rut del cliente con la que fue
+            if(clientes.get(i).getRut().equals(rut)) {                              //recibida por parametro
+                return clientes.get(i).getRut();                                    //Retorna el rut del cliente
+            }
+        }
+        return null;
+    }
+    
+    public String obtenerMail (String rut){                                         //Método para obtener el correo electronico del cliente según el rut ingresado
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara el rut del cliente con la que fue
+            if(clientes.get(i).getRut().equals(rut)) {                              //recibida por parametro
+                return clientes.get(i).getCorreoElectronico();                      //Retorna el correo electronico del cliente
+            }
+        }
+        return null;
+    }
+    
+    public String obtenerTelefono (String rut){                                     //Método para obtener el telefono del cliente según el rut ingresado
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara el rut del cliente con la que fue
+            if(clientes.get(i).getRut().equals(rut)) {                              //recibida por parametro
+                return clientes.get(i).getTelefono();                               //Retorna el telefono del cliente
+            }
+        }
+        return null;
+    }
+    
+    public String obtenerPlanContratado (String rut){                               //Método para obtener el plan contratado del cliente según el rut ingresado
+        for(int i = 0; i < tamano(); i++){                                          //Se recorre la lista y compara el rut del cliente con la que fue
+            if(clientes.get(i).getRut().equals(rut)) {                              //recibida por parametro
+                return clientes.get(i).getPlanContratado();                         //Retorna el plan contratado del cliente
+            }
+        }
+        return null;
+    }
 }
 //---------------------------------------------------------------------------------------------------//
