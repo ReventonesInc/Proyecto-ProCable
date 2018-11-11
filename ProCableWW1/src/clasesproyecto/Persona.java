@@ -64,18 +64,18 @@ public abstract class Persona implements Verificar{
 
 //---------------------------------------- Métodos ---------------------------------------------//
     
-    public boolean equals(Persona p){
+    public boolean equals(Persona p){ //Método para comparar el nombre, apellido y rut
         Persona otro = (Persona)p;
         return (nombre.equals(otro.getNombre())) && (apellido.equals(otro.getApellido())) && (rut.equals(otro.getRut()));
     }
     
     @Override
-    public String ingresar(){
+    public String ingresar(){ //Metodo que retorna mensaje de bienvenida de X persona
         return "Bienvenido "+this.nombre+" "+this.apellido+"!";
     }
 
     @Override
-    public String salir(){
+    public String salir(){ //Metodo que retorna mensaje de cerrar sesion de X persona
         return "Cerrando sesión de "+this.nombre+" "+this.apellido+"!";
     }
 }
