@@ -2,7 +2,7 @@ package clasesproyecto;
 
 import java.text.*;
 
-public class Cliente extends Persona {
+public class Cliente extends Persona {      //Herencia: Clase cliente hereda persona
     private String planContratado;
     private String telefono;
     private SimpleDateFormat fechaContrato;
@@ -11,6 +11,7 @@ public class Cliente extends Persona {
     private  float deuda;
 	
 //--------------------------------------Constructor--------------------------------------------------//
+    
     public Cliente(int ID, String planContratado, String nombre, String apellido, String rut, String correoElectronico, String telefono) {
         super(ID, nombre, apellido, rut, correoElectronico);
         this.planContratado = planContratado;
@@ -20,8 +21,9 @@ public class Cliente extends Persona {
         this. deuda = 0;
         this.numeroDeudas = 0;
     }
+    
 //------------------------------------- Getters y setters -------------------------------------------//
-
+    
     public String getPlanContratado() {
         return planContratado;
     }
@@ -45,6 +47,8 @@ public class Cliente extends Persona {
     public void setFecha(SimpleDateFormat nuevaFecha) {
         this.fechaContrato = nuevaFecha;
     }
+    
+//----------------------- Métodos ----------------------------------------------------------//
     
     public void calcularDeuda(float otrosPagos){
         int i;

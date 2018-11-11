@@ -11,7 +11,7 @@ public abstract class Persona implements Verificar{
     private String correoElectronico;
 
 //-------------------------------------- Constructor ----------------------------------------------//
-	
+    
     public Persona(int ID, String nombre, String apellido, String rut, String correoElectronico) {
 	this.ID = ID;
 	this.nombre = nombre;
@@ -19,9 +19,9 @@ public abstract class Persona implements Verificar{
 	this.rut = rut;
 	this.correoElectronico = correoElectronico;		
     }
-	
-	//-------------------------------------- Getters y setters ----------------------------------------//
 
+//-------------------------------------- Getters y setters ----------------------------------------//
+    
     public int getID() {
 	return ID;
     }
@@ -61,9 +61,9 @@ public abstract class Persona implements Verificar{
     public void setCorreoElectronico(String correoElectronico) {
     	this.correoElectronico = correoElectronico;
     }
-	
-	//---------------------------------------- Metodos ---------------------------------------------//
-	
+
+//---------------------------------------- Métodos ---------------------------------------------//
+    
     public boolean equals(Persona p){
         Persona otro = (Persona)p;
         return (nombre.equals(otro.getNombre())) && (apellido.equals(otro.getApellido())) && (rut.equals(otro.getRut()));

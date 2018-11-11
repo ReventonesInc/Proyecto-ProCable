@@ -7,6 +7,7 @@ public class Plan {
     private int cantCanales;
 	
 //--------------------------------------------- Constructor -----------------------------------------//
+    
     public Plan(int ID, String nombrePlan, float valorPlan, int cantCanales) {
         this.ID = ID;
 	this.nombrePlan = nombrePlan;
@@ -15,6 +16,7 @@ public class Plan {
     }
 	
 //--------------------------------------------- Getters y setters -----------------------------------//
+    
     public String getNombrePlan() {
 	return nombrePlan;
     }

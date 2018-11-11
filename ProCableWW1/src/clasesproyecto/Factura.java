@@ -7,12 +7,16 @@ public class Factura {
     private float montoPagado;
     private int idFactura;
     
+//--------------------------------------Constructor--------------------------------------------------//    
+    
     public Factura(Cliente clienteAbonante, float montoPagado, int idFactura){
         this.clienteAbonante = clienteAbonante;
         this.montoPagado = montoPagado;
         this.idFactura = idFactura;
     }
-
+    
+//------------------------------------- Getters y setters -------------------------------------------//    
+    
     public Cliente getClienteAbonante() {
         return clienteAbonante;
     }
@@ -36,4 +40,7 @@ public class Factura {
     public void setIdFactura(int idFactura) {
         this.idFactura = idFactura;
     }
+    
+//----------------------- Métodos ----------------------------------------------------------//
+
 }

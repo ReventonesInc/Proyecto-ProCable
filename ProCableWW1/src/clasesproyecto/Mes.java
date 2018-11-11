@@ -9,12 +9,16 @@ import clasesproyecto.listas.*;
 public class Mes {
     private int numeroMes;
     private ListaFactura facturasMensuales;
-
+    
+//--------------------------------------Constructor--------------------------------------------------//
+    
     public Mes(int numeroMes) {
         this.numeroMes = numeroMes;
         this.facturasMensuales = new ListaFactura();
     }
-        
+    
+//------------------------------------- Getters y setters -------------------------------------------//
+    
     public int getNumeroMes() {
         return numeroMes;
     }
@@ -30,4 +34,7 @@ public class Mes {
     public void setFacturasMensuales(ListaFactura facturasMensuales) {
         this.facturasMensuales = facturasMensuales;
     }
+    
+//----------------------- Métodos ----------------------------------------------------------//
+
 }

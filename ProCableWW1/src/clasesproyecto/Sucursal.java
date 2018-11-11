@@ -8,8 +8,7 @@ package clasesproyecto;
 import clasesproyecto.listas.*;
 import java.util.*;
 
-/* Haashmap de planes conectado con la sucursal
-*/
+/* Un Hashmap de planes conectado con la sucursal*/
 
 public class Sucursal {
     //private ListaFactura facturasSucursales;  
@@ -19,7 +18,9 @@ public class Sucursal {
     private String rutSucursal;
 
     private HashMap<String, HashMap<String, ListaFactura>> facturasAnuales;
-
+    
+//--------------------------------------Constructor--------------------------------------------------//
+    
     public Sucursal(int ID, String nombreSucursal, String direccionSurcursal, String rutSucursal) {
         this.ID = ID;
         this.nombreSucursal = nombreSucursal;
@@ -28,6 +29,8 @@ public class Sucursal {
         this.facturasAnuales = new HashMap<>();
     }
 
+//--------------------------------------------- Getters y setters -----------------------------------//
+    
     public String getNombreSucursal() {
         return nombreSucursal;
     }
@@ -64,11 +67,11 @@ public class Sucursal {
         return ID;
     }
 
+//---------------------------------------- Métodos ---------------------------------------------//
+    
     public HashMap<String, HashMap<String, ListaFactura>> getFacturasAnuales() {
         return facturasAnuales;
     }
-    
-    
     
     public boolean equals(Sucursal comparado){
         if(nombreSucursal.equals(comparado.getNombreSucursal())){
