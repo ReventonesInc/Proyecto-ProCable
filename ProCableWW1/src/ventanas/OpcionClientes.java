@@ -96,12 +96,17 @@ public class OpcionClientes extends javax.swing.JFrame {
         BtnModificarCliente.setContentAreaFilled(false);
         BtnModificarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnModificarCliente.setOpaque(true);
+        BtnModificarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnModificarClienteActionPerformed(evt);
+            }
+        });
         getContentPane().add(BtnModificarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 190, 40));
 
         BtnMostrarCliente.setBackground(new java.awt.Color(102, 0, 102));
         BtnMostrarCliente.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         BtnMostrarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        BtnMostrarCliente.setText("Mostrar Lista");
+        BtnMostrarCliente.setText("Mostrar");
         BtnMostrarCliente.setBorder(null);
         BtnMostrarCliente.setContentAreaFilled(false);
         BtnMostrarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -157,7 +162,6 @@ public class OpcionClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnMostrarClienteActionPerformed
 
     private void BtnAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregarClienteActionPerformed
-        
         if((this.procable).planes.estaVacio()){
             JOptionPane.showMessageDialog(null, "No hay planes registrados, agregue un plan antes de agregar un cliente!");
         }
@@ -173,6 +177,17 @@ public class OpcionClientes extends javax.swing.JFrame {
         principal.setVisible(true);
         dispose();
     }//GEN-LAST:event_BtnVolverAlMenuActionPerformed
+
+    private void BtnModificarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarClienteActionPerformed
+        if((this.procable).clientes.estaVacio()){
+            JOptionPane.showMessageDialog(null, "No hay clientes por modificar!");
+        }
+        else{
+            VentanaRutModificarCliente formrut = new VentanaRutModificarCliente(procable);
+            formrut.setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_BtnModificarClienteActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAgregarCliente;
