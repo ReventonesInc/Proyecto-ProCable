@@ -158,7 +158,14 @@ public class OpcionClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnEliminarClienteActionPerformed
 
     private void BtnMostrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarClienteActionPerformed
-        // TODO add your handling code here:
+        if((this.procable).clientes.estaVacio()){
+            JOptionPane.showMessageDialog(null, "No hay clientes por mostrar!");
+        }
+        else{
+            VentanaRutMostrarCliente formrut = new VentanaRutMostrarCliente(procable);
+            formrut.setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_BtnMostrarClienteActionPerformed
 
     private void BtnAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregarClienteActionPerformed
