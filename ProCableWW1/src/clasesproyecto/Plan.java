@@ -27,7 +27,7 @@ public class Plan {
         return valorPlan;
     }
     
-    public void setValorPlan(int valorPlan) {
+    public void setValorPlan(float valorPlan) {
 	this.valorPlan = valorPlan;
     }
 

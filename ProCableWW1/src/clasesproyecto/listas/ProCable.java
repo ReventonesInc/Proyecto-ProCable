@@ -65,6 +65,14 @@ public class ProCable {
     public boolean eliminarPlan(String nombrePlan) {                                    //Método para eliminar un plan según su nombre
         return planes.eliminarPlan(nombrePlan);                                         //Retorna true si el plan se elimina de forma exitosa, en el caso contrario
     }                                                                                   //retornará false
+    
+    public boolean buscarPlan(String nombrePlan){
+        return planes.buscarPlanMenu(nombrePlan);
+    }
+    
+    public void modificarPlan(String nombrePlanAntiguo, String nombrePlanNuevo, float valor, int cantidadCanales){
+        planes.modificarPlan(nombrePlanAntiguo, new Plan(0,nombrePlanNuevo, valor, cantidadCanales));
+    }
 
     public void mostrarPlanes(){                                                        //Método para mostrar todos los planes por consola
         planes.mostrarPlan();                                                           //Se imprime todos los datos de cada plan de forma ordenada

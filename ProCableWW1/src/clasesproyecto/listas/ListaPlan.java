@@ -87,6 +87,20 @@ public class ListaPlan {
             return null;
         }
     }
+    
+    public boolean buscarPlanMenu(String nombrePlan){
+        if(estaVacio()) {								//Sino, retorna el plan en caso de encontrarlo
+            return false;
+	}
+	else {
+            for(int i = 0; i < tamano(); i++) {
+                if(planes.get(i).getNombrePlan().equals(nombrePlan)) {
+                    return true;
+		}
+            }
+            return false;
+        }
+    }
 	
     public boolean agregarPlan(Plan nuevoPlan) {		//Metodo para agregar planes, agrega el plan en caso de estar vacia o si no esta el plan
         if(estaVacio()) {								//En caso de encontrar el plan, no lo agrega y retorna false
@@ -122,6 +136,13 @@ public class ListaPlan {
                 return true;
             }
         }
+    }
+    
+    public void modificarPlan(String nombrePlan, Plan modificado){
+        int i = indice(nombrePlan);
+        planes.get(i).setNombrePlan(modificado.getNombrePlan());
+        planes.get(i).setValorPlan(modificado.getValorPlan());
+        planes.get(i).setCantCanales(modificado.getCantCanales());
     }
     
     public void mostrarPlan(){                                                          //Método para mostrar los planes registrados por consola

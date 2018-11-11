@@ -43,7 +43,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jbConsutar.setBackground(new java.awt.Color(102, 0, 102));
         jbConsutar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jbConsutar.setForeground(new java.awt.Color(255, 255, 255));
-        jbConsutar.setText("Consular Cliente");
+        jbConsutar.setText("Consultar Cliente");
         getContentPane().add(jbConsutar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 200, 40));
 
         jbIngresar.setBackground(new java.awt.Color(102, 0, 102));
