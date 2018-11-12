@@ -41,6 +41,16 @@ public class MapFacturasAnuales {
         }
     }
     
+    public boolean agregarAnoFinanciero(String year){
+        if(facturas.containsKey(year)){
+            return false;
+        }
+        else{
+            facturas.put(year, new ListaMes());
+            return true;
+        }
+    }
+    
     public boolean agregarFactura(String year,int mes, Factura nuevaFactura){
         return facturas.get(year).agregarFactura(mes, nuevaFactura);
     }
