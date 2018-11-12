@@ -156,5 +156,17 @@ public class ProCable {
     public String obtenerPlanContratadoCliente(String rut){
         return clientes.obtenerPlanContratado(rut);
     }
+    
+    public String obtenerNombrePlan(String rut){
+        return planes.obtenerNombrePlan(rut);
+    }
+    
+    public float obtenerValorPlan(String rut){
+        return planes.obtenerValor(rut);
+    }
+    
+    public int obtenerCantidadCanalesPlan(String rut){
+        return planes.obtenerCantidadCanales(rut);
+    }
 }   
 
