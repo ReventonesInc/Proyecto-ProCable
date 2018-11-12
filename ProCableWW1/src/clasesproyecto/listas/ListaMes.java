@@ -56,4 +56,5 @@ public class ListaMes {
     public boolean agregarFactura(int numMes, Factura nuevaFactura){                    //Metodo que agrega una factura dado el numero del mes y una factura
         return meses.get(numMes).getFacturasMensuales().agregarFactura(nuevaFactura);   //Retorna true si la factura fue agregada satisfactoriamente y false en caso contrario
     }
+    
 }
