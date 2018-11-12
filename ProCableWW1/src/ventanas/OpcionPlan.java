@@ -97,6 +97,11 @@ public class OpcionPlan extends javax.swing.JFrame {
         BtnVerMas.setContentAreaFilled(false);
         BtnVerMas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnVerMas.setOpaque(true);
+        BtnVerMas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVerMasActionPerformed(evt);
+            }
+        });
         getContentPane().add(BtnVerMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 210, 40));
 
         BtnVolverAlMenu.setBackground(new java.awt.Color(102, 0, 102));
@@ -170,6 +175,12 @@ public class OpcionPlan extends javax.swing.JFrame {
             dispose();
         }
     }//GEN-LAST:event_BtnModificarActionPerformed
+
+    private void BtnVerMasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerMasActionPerformed
+        SubVentanaVerMasPlan vermas = new SubVentanaVerMasPlan(procable);
+        vermas.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BtnVerMasActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAgregar;

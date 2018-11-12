@@ -153,8 +153,38 @@ public class ListaPlan {
             System.out.println("Nombre: "+ planes.get(i).getNombrePlan());
             System.out.println("Valor: "+ planes.get(i).getValorPlan());
             System.out.println("Cantidad Canales: "+ planes.get(i).getCantCanales());
+            System.out.println("Cantidad Clientes contratado: "+planes.get(i).getCantVentas());
             System.out.println("____________________________________________");
         }
+    }
+    
+    public void aumentarVentaPlan(String nombre){
+        for(int i = 0; i < tamano(); i++){
+            if(planes.get(i).getNombrePlan().equals(nombre)){
+                planes.get(i).setCantVentas(planes.get(i).getCantVentas() + 1);
+            }
+        }
+    }
+    
+    public void eliminarVentaPlan(String nombre){
+        for(int i = 0; i < tamano(); i++){
+            if(planes.get(i).getNombrePlan().equals(nombre)){
+                planes.get(i).setCantVentas(planes.get(i).getCantVentas() - 1);
+            }
+        }
+    }
+    
+    public String calcularMayorVenta(){
+        int pivote = 0;
+        String planMayorVenta = null;
+        
+        for(int i = 0; i < tamano(); i++){
+            if(pivote < planes.get(i).getCantVentas()){
+                pivote = planes.get(i).getCantVentas();
+                planMayorVenta = planes.get(i).getNombrePlan();
+            }
+        }
+        return planMayorVenta;
     }
     
 //-----------------------------------------------------------------------------------

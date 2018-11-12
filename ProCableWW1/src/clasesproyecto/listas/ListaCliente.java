@@ -147,6 +147,7 @@ public class ListaCliente {
         clientes.get(i).setCorreoElectronico(modificado.getCorreoElectronico());
         clientes.get(i).setRut(modificado.getRut());
         clientes.get(i).setTelefono(modificado.getTelefono());
+        clientes.get(i).setPlanContratado(modificado.getPlanContratado());
     }
     
     public void mostrarCliente(){                                                   //Metodo que muestra los datos de un cliente

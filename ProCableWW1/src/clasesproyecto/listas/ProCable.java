@@ -32,19 +32,34 @@ public class ProCable {
 	
     public boolean agregarCliente(String planContratado, String nombre, String apellido, String rut, String correoElectronico, String telefono) {          //Método para agregar un cliente según los datos entregados por parámetros
         if(clientes.estaVacio()) {
+            planes.aumentarVentaPlan(planContratado);
             return clientes.agregarCliente(new Cliente(1, planContratado, nombre, apellido, rut, correoElectronico, telefono));                     //Retorna un true si el cliente se agregó de forma correcta, si es el caso contrario retorna false
 	}
-	else {                                                                                                                      //Si el Arraylist esta no esta vacio, el cliente se agregará en la última casilla de éste.
+	else {
+            //Si el Arraylist esta no esta vacio, el cliente se agregará en la última casilla de éste.
+            planes.aumentarVentaPlan(planContratado);
             return clientes.agregarCliente(new Cliente(clientes.tamano(), planContratado, nombre, apellido, rut, correoElectronico, telefono));
         }
     }
 	
-    public boolean eliminarCliente(String rutCliente) {                                                                             //Método para eliminar un cliente según el rut
+    public boolean eliminarCliente(String rutCliente) { 
+        //Método para eliminar un cliente según el rut
+        String planContratado = obtenerPlanContratadoCliente(rutCliente);
+        planes.eliminarVentaPlan(planContratado);
         return clientes.eliminarCliente(rutCliente);                                   
     }
     
     public void modificarCliente(String rutViejo, String planContratado, String nombre, String apellido, String rutNuevo, String correoElectronico, String telefono){                                   //Método para modificar un cliente según los datos entregados por parámetro
-        clientes.modificarCliente(rutViejo,new Cliente(0, planContratado, nombre, apellido, rutNuevo, correoElectronico, telefono));                                                            //Se modifica el cliente en lista clientes y lista de clientes de contratados
+        String planContratadoCliente = obtenerPlanContratadoCliente(rutViejo);
+        System.out.println("holi "+ planContratado);
+        if(planContratadoCliente.equals(planContratado)){
+            clientes.modificarCliente(rutViejo,new Cliente(0, planContratado, nombre, apellido, rutNuevo, correoElectronico, telefono));
+        }
+        else{
+            planes.eliminarVentaPlan(planContratadoCliente);
+            planes.aumentarVentaPlan(planContratado);
+            clientes.modificarCliente(rutViejo,new Cliente(0, planContratado, nombre, apellido, rutNuevo, correoElectronico, telefono));
+        }
     }    
     
     public boolean buscarCliente(String rut){
@@ -171,8 +186,14 @@ public class ProCable {
         return planes.obtenerCantidadCanales(rut);
     }
     
+//------------------------------------------------------------------------------
+    
     public boolean agregarFactura(String rutSucursal, String year, int mes, Factura nuevaFactura){
         return sucursales.agregarFactura(rutSucursal, year, mes, nuevaFactura);
-    } 
+    }
+    
+    public String obtenerPlanMayorVenta(){
+        return planes.calcularMayorVenta();
+    }
 }   
 
