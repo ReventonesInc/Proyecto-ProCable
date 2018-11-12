@@ -17,7 +17,7 @@ public class Sucursal {
     private String direccionSurcursal;
     private String rutSucursal;
 
-    private HashMap<String, HashMap<String, ListaFactura>> facturasAnuales;
+    private HashMap<String, ListaMes> facturasAnuales;
     
 //--------------------------------------Constructor--------------------------------------------------//
     
@@ -59,7 +59,7 @@ public class Sucursal {
         this.ID = ID;
     }
 
-    public void setFacturasAnuales(HashMap<String, HashMap<String, ListaFactura>> facturasAnuales) {
+    public void setFacturasAnuales(HashMap<String, ListaMes> facturasAnuales) {
         this.facturasAnuales = facturasAnuales;
     }
 
@@ -69,7 +69,7 @@ public class Sucursal {
 
 //---------------------------------------- Métodos ---------------------------------------------//
     
-    public HashMap<String, HashMap<String, ListaFactura>> getFacturasAnuales() {
+    public HashMap<String, ListaMes> getFacturasAnuales() {
         return facturasAnuales;
     }
     
