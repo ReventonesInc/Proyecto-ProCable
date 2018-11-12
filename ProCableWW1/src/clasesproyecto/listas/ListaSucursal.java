@@ -5,6 +5,7 @@
  */
 package clasesproyecto.listas;
 import java.util.*;
+import clasesproyecto.*;
 
 import clasesproyecto.Sucursal;
 
@@ -111,6 +112,10 @@ public class ListaSucursal {
                     return true;
                 }
         }
+    }
+    
+    public boolean agregarFactura(String rutSucursal, String year, int mes, Factura nuevaFactura){
+        return buscarSucursal(rutSucursal).getFacturasAnuales().agregarFactura(year, mes, nuevaFactura);
     }
     
 }

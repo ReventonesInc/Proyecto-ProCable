@@ -13,6 +13,7 @@ public class ProCable {
     public ListaPersonal personal;  //Lista que contiene los empleados
     public ListaCliente clientes;   //Lista que contiene los clientes suscritos
     public ListaPlan planes;        //Lista que contiene los planes
+    public ListaSucursal sucursales;
     
 /**
  * Constructor de la clase ProCable
@@ -24,6 +25,7 @@ public class ProCable {
     	this.personal = new ListaPersonal();
 	this.clientes = new ListaCliente();
         this.planes = new ListaPlan();
+        this.sucursales = new ListaSucursal();
     }
 	
 //---------------------------- Metodos -----------------------------------------//
@@ -168,5 +170,9 @@ public class ProCable {
     public int obtenerCantidadCanalesPlan(String rut){
         return planes.obtenerCantidadCanales(rut);
     }
+    
+    public boolean agregarFactura(String rutSucursal, String year, int mes, Factura nuevaFactura){
+        return sucursales.agregarFactura(rutSucursal, year, mes, nuevaFactura);
+    } 
 }   
 
