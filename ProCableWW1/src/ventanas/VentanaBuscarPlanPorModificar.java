@@ -44,6 +44,8 @@ public class VentanaBuscarPlanPorModificar extends javax.swing.JFrame {
         BtnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,8 +146,8 @@ public class VentanaBuscarPlanPorModificar extends javax.swing.JFrame {
         }
         else{
             if((this.procable).buscarPlan(jTextNombre.getText()) == true){
-                VentanaEliminarPlan opcionEliminar = new VentanaEliminarPlan(procable, jTextNombre.getText());
-                opcionEliminar.setVisible(true);
+                VentanaModificarPlan opcionmod = new VentanaModificarPlan(procable, jTextNombre.getText());
+                opcionmod.setVisible(true);
                 dispose();
             }
             else{

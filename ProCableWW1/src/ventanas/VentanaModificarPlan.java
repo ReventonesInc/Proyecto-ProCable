@@ -53,6 +53,8 @@ public class VentanaModificarPlan extends javax.swing.JFrame {
         jbAceptar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
@@ -163,7 +165,7 @@ public class VentanaModificarPlan extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Es obligatorio completar el formulario!");
                 }
                 else{
-                    int valor = Integer.parseInt(jTextValor.getText());
+                    float valor = Float.parseFloat(jTextValor.getText());
                     int cantidadCanal = Integer.parseInt(jTextCanales.getText());
                     (this.procable).modificarPlan(nombre, jTextNombre.getText(), valor, cantidadCanal);
                     JOptionPane.showMessageDialog(null, "Plan modificado con exito!");

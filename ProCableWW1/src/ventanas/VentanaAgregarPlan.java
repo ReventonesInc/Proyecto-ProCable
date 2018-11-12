@@ -162,7 +162,7 @@ public class VentanaAgregarPlan extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Es obligatorio completar el formulario!");
                 }
                 else{
-                    int valor = Integer.parseInt(jTextValor.getText());
+                    float valor = Float.parseFloat(jTextValor.getText());
                     int cantidadCanal = Integer.parseInt(jTextCanales.getText());
                     if((this.procable).agregarPlan(jTextNombre.getText(), valor, cantidadCanal) == true){
                         JOptionPane.showMessageDialog(null, "Plan agregado con exito!");

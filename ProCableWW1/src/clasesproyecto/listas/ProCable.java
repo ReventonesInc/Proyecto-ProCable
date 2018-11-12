@@ -53,7 +53,7 @@ public class ProCable {
         clientes.mostrarCliente();                                                      //Se imprime los datos de los clientes de forma ordenada.
     }
 	
-    public boolean agregarPlan(String nombre, int valorPlan, int cantCanales) {                         //Método para agregar un plan según los datos que se entregan por parámetro
+    public boolean agregarPlan(String nombre, float valorPlan, int cantCanales) {                         //Método para agregar un plan según los datos que se entregan por parámetro
 	if(planes.estaVacio()) {                                                                        //Si el Arraylist de planes está vacio, el plan se agrega en la primera posición
             return planes.agregarPlan(new Plan(1, nombre, valorPlan, cantCanales));                     //En el caso contrario se agregará en la última posición
 	}
