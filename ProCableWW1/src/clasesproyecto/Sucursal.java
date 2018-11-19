@@ -17,7 +17,7 @@ public class Sucursal {
     private String direccionSurcursal;
     private String rutSucursal;
 
-    private MapFacturasAnuales facturasAnuales;
+    private HashMap<String, HashMap<String, ListaFactura>> facturasAnuales;
     
 //--------------------------------------Constructor--------------------------------------------------//
     
@@ -26,12 +26,10 @@ public class Sucursal {
         this.nombreSucursal = nombreSucursal;
         this.direccionSurcursal = direccionSurcursal;
         this.rutSucursal = rutSucursal;
-        this.facturasAnuales = new MapFacturasAnuales();
+        this.facturasAnuales = new HashMap<>();
     }
 
 //--------------------------------------------- Getters y setters -----------------------------------//
-    
-    
     
     public String getNombreSucursal() {
         return nombreSucursal;
@@ -61,15 +59,20 @@ public class Sucursal {
         this.ID = ID;
     }
 
+    public void setFacturasAnuales(HashMap<String, HashMap<String, ListaFactura>> facturasAnuales) {
+        this.facturasAnuales = facturasAnuales;
+    }
+
     public int getID() {
         return ID;
     }
+
+//---------------------------------------- Métodos ---------------------------------------------//
     
-    public MapFacturasAnuales getFacturasAnuales() {
+    public HashMap<String, HashMap<String, ListaFactura>> getFacturasAnuales() {
         return facturasAnuales;
     }
     
-//---------------------------------------- Métodos ---------------------------------------------//  
     public boolean equals(Sucursal comparado){
         if(nombreSucursal.equals(comparado.getNombreSucursal())){
             return true;

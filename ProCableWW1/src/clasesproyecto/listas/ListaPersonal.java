@@ -24,73 +24,73 @@ public final class ListaPersonal {
         this.personal = personal;
     }
 	
-    //--------------------------------------- Metodos  -------------------------------------------------//
+    //--------------------------------------- M�todos  -------------------------------------------------//
 	
-    public boolean estaVacio() {						//Reemplazo para el metodo isEmpty
+    public boolean estaVacio() {								//Reemplazo para el metodo isEmpty
         return personal.isEmpty();
     }
 	
-    public int tamano() {							//Reemplazo para el metodo size
+    public int tamano() {										//Reemplazo para el metodo size
         return personal.size();
     }
 	
     public Personal buscarPersonal(Personal buscado) {				//Metodo para buscar un Personal en la lista
-        if(estaVacio()) {							//Si la lista esta vacia
-            return null;							//No se encuentra ningun Personal y retorna null
+        if(estaVacio()) {										//Si la lista esta vacia
+            return null;										//No se encuentra ningun Personal y retorna null
         }
-        else {									//Sino, la lista no esta vacia y hay que recorrerla
+        else {													//Sino, la lista no esta vacia y hay que recorrerla
             for(int i = 0; i < tamano(); i++) {					//Ciclo que recorrera la ArrayList
-                if(personal.get(i).equals(buscado)) {                           //Busca el Personal y si lo encuentra lo retorna
+                if(personal.get(i).equals(buscado)) {			//Busca el Personal y si lo encuentra lo retorna
                     return personal.get(i);
                 }
             }
-            return null;							//En caso contrario, ya que no lo encuentra retorna null
+            return null;										//En caso contrario, ya que no lo encuentra retorna null
         }
     }
 	
     public Personal buscarPersonal(String rutPersonal) {			//Metodo para buscar un Personal en la lista usando su rut
-        if(estaVacio()) {							//Si la lista esta vacia
-            return null;							//No se encuentra ningun rut que coincida y retorna null
+        if(estaVacio()) {										//Si la lista esta vacia
+            return null;										//No se encuentra ningun rut que coincida y retorna null
         }
-        else {									//Sino, la lista no esta vacia y hay que recorrela
+        else {													//Sino, la lista no esta vacia y hay que recorrela
             for(int i = 0; i < tamano(); i++) {
-                if(personal.get(i).getRut().equals(rutPersonal)) {              //Busca el rut en el ArrayList esperando una coincidencia
-                    return personal.get(i);					//Si lo encuentra, retorna el Personal con dicho rut
+                if(personal.get(i).getRut().equals(rutPersonal)) {	//Busca el rut en el ArrayList esperando una coincidencia
+                    return personal.get(i);							//Si lo encuentra, retorna el Personal con dicho rut
                 }
             }
-            return null;							//En caso contrario retorna null, ya que no encontro el rut
+            return null;										//En caso contrario retorna null, ya que no encontro el rut
         }
     }
     
     public Boolean buscarPersonalMenu(String rutPersonal) {			//Metodo para buscar un Personal en la lista usando su rut (Se utiliza en en la VentanaRut)
-        if(estaVacio()) {							//Si la lista esta vacia
-            return false;							//No se encuentra ningun rut que coincida y retorna false
+        if(estaVacio()) {										//Si la lista esta vacia
+            return false;										//No se encuentra ningun rut que coincida y retorna false
         }
-        else {									//Sino, la lista no esta vacia y hay que recorrela
+        else {													//Sino, la lista no esta vacia y hay que recorrela
             for(int i = 0; i < tamano(); i++) {
-                if(personal.get(i).getRut().equals(rutPersonal)) {              //Busca el rut en el ArrayList esperando una coincidencia
-                    return true;                                                //Si lo encuentra, retorna el true
+                if(personal.get(i).getRut().equals(rutPersonal)) {	//Busca el rut en el ArrayList esperando una coincidencia
+                    return true;                                                                //Si lo encuentra, retorna el true
                 }                                                                                   
             }
-            return false;                                                       //En caso contrario retorna false
+            return false;                                                                               //En caso contrario retorna false
         }
     }
     
     public int indice(String rut) {						//Metodo para retornar el indice del array
-        if(estaVacio()) {							//Si la lista esta vacia retorna un valor fuera del vector
+        if(estaVacio()) {										//Si la lista esta vacia retorna un valor fuera del vector
             return -1;									
         }
         else {								
-            for(int i = 0; i < tamano(); i++) {					//Sino se busca el cliente y se retorna su posicion	
+            for(int i = 0; i < tamano(); i++) {					//Sino se busca el cleinte y se retorna su posicion	
                 if(personal.get(i).getRut().equals(rut)){
                     return i;
 		}
             }
-            return -1;                                                          //En caso de no encontrar al cliente se retorna un valor fuera del vector
+            return -1;									
         }
     }
 	
-    public int indice(Personal buscado) {                                       //Metodo para retornar el indice del array en base a un Personal
+    public int indice(Personal buscado) {
         if(estaVacio()) {						
             return -1;									
         }
@@ -105,36 +105,36 @@ public final class ListaPersonal {
     }
 	
     public boolean agregarPersonal(Personal nuevoPersonal) {
-        if(estaVacio()) {							//Si la lista esta vacia
-            personal.add(nuevoPersonal);					//Agrega el Personal al final
+        if(estaVacio()) {										//Si la lista esta vacia
+            personal.add(nuevoPersonal);							//Agrega el Personal al final
             return true;
         }
-        else {									//Si no esta vacia
+        else {													//Si no esta vacia
             if(buscarPersonal(nuevoPersonal)!=null) {				//Busca el Personal
-                return false;							//Si lo encuentra retorna false
+                return false;									//Si lo encuentra retorna false
             }
-            else {								//Si lo encuentra
+            else {												//Si lo encuentra
                 personal.add(nuevoPersonal);					//Lo agrega al final
                 return true;
             }
         }
     }
 	
-    public boolean eliminarPersonal (String rutPersonal) {                      //Metodo para eliminar un Personal de la lista
-        Personal buscado = buscarPersonal(rutPersonal);                         //Variable que almacena el Personal a eliminar
-        if(buscado == null) {							//Si no se encuentra, retorna false
+    public boolean eliminarPersonal (String rutPersonal) {		//Metodo para eliminar un Personal de la lista
+        Personal buscado = buscarPersonal(rutPersonal);		//Se busca el Personal
+        if(buscado == null) {								//Si no se encuentra, retorna false
             return false;
         }
-        else {                                                                  //En caso contrario se busca
-            if(personal.get(tamano()-1).equals(buscado)){                       //Si se encuentra en la ultima posicion, se remueve y retorna true
+        else {
+            if(personal.get(tamano()-1).equals(buscado)){
                 personal.remove(buscado);
                 return true;
             }
-            else {                                                              //Sino, en caso de encontrarse en una posicion que no sea la ultima
-                for(int i = indice(buscado)+1; i < tamano(); i++) {             //Se modifica el id de los clientes hacia la derecha
+            else {
+                for(int i = indice(buscado)+1; i < tamano(); i++) {
                     this.personal.get(i).setID(personal.get(i).getID()-1);
                 }
-                personal.remove(buscado);                                       //Luego se elimina y se retorna true;
+                personal.remove(buscado);
                 return true;
             }
         }

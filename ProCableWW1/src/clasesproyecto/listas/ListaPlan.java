@@ -9,7 +9,6 @@ public class ListaPlan {
     private ArrayList<Plan> planes;
 	
 //---------------------- Constructor ----------------------------------------------//
-    
     public ListaPlan() {
         this.planes =  new ArrayList<Plan>();
     }
@@ -23,9 +22,7 @@ public class ListaPlan {
     public void setPlanes(ArrayList<Plan> nuevosPlanes) {
         this.planes = nuevosPlanes;
     }
-    
 //----------------------------- Metodos ----------------------------------------------//
-    
     public int tamano() {
         return planes.size();
     }
@@ -34,17 +31,17 @@ public class ListaPlan {
         return planes.isEmpty();
     }
 	
-    public int indice(Plan buscado) {                                           //Metodo que retoran el indice donde se encuentra un plan
-	if(estaVacio()) {                                                       //Si la lista esta vacia se retorna un valor fuera del vector
+    public int indice(Plan buscado) {
+	if(estaVacio()) {						
             return -1;									
 	}
-	else {                                                                  //Sino, se busca el plan, si se encuentra se retorna el indice
+	else {								
             for(int i = 0; i < tamano(); i++) {	
 		if(planes.get(i).equals(buscado)) {
                     return i;
 		}
             }
-            return -1;                                                          //En caso de no encontrarlo se retorna un valor fuera del vector
+            return -1;									
 	}
     }
     
@@ -63,88 +60,88 @@ public class ListaPlan {
     }
 	
 	
-    public Plan buscarPlan(Plan buscado) {				//Metodo para buscar un plan
-        if(estaVacio()) {						//Si la lista esta vacia retorna null
+    public Plan buscarPlan(Plan buscado) {				//Metodo busqueda del plan, retorna null si esta vacia o no lo encuentra
+        if(estaVacio()) {								//Y el plan, en caso de encontrarlo
             return null;
 	}
-        else {                                                          //Si lo encuentra, retorna el plan encontrado
+        else {
             for(int i = 0; i < tamano(); i++) {
 		if(planes.get(i).equals(buscado)) {
                     return planes.get(i);
 		}
             }
-            return null;                                                //En caso de no encontrarlo retorna null
+            return null;
 	}
     }
 	
-    public Plan buscarPlan(String nombrePlan) {                             //Metodo busqueda de plan con string
-	if(estaVacio()) {                                                   //Si la lista esta vacia, retorna null
+    public Plan buscarPlan(String nombrePlan) {			//Metodo busqueda de plan con string, retorna null si no lo encuentra o esta vacia
+	if(estaVacio()) {								//Sino, retorna el plan en caso de encontrarlo
             return null;
 	}
-	else {                                                              //Sino, retorna el plan en caso de encontrarlo
+	else {
             for(int i = 0; i < tamano(); i++) {
                 if(planes.get(i).getNombrePlan().equals(nombrePlan)) {
                     return planes.get(i);
 		}
             }
-            return null;                                                    //En caso de no encontrarlo retorna null
+            return null;
         }
     }
     
-    public boolean buscarPlanMenu(String nombrePlan){                           //Metodo para buscar un plan en el menu segun su el nombre del plan
-        if(estaVacio()) {							//Si la lista esta vacia retorna false
+    public boolean buscarPlanMenu(String nombrePlan){
+        if(estaVacio()) {								//Sino, retorna el plan en caso de encontrarlo
             return false;
 	}
-	else {                                                                  //Se busca el plan y en caso de encontralo se retorna true
+	else {
             for(int i = 0; i < tamano(); i++) {
                 if(planes.get(i).getNombrePlan().equals(nombrePlan)) {
                     return true;
 		}
             }
-            return false;                                                       //Sino se encuentra se retorna false
+            return false;
         }
     }
 	
-    public boolean agregarPlan(Plan nuevoPlan) {                    //Metodo para agregar planes
-        if(estaVacio()) {                                           //Si la lista esta vacia, lo agrega y retorna true
+    public boolean agregarPlan(Plan nuevoPlan) {		//Metodo para agregar planes, agrega el plan en caso de estar vacia o si no esta el plan
+        if(estaVacio()) {								//En caso de encontrar el plan, no lo agrega y retorna false
             planes.add(nuevoPlan);
             return true;
 	}
-	else {                                                      //Sino, se busca el plan
-            if(buscarPlan(nuevoPlan.getNombrePlan())!=null) {       //En caso de encontrar el plan, no lo agrega y retorna false
+	else {
+            if(buscarPlan(nuevoPlan.getNombrePlan())!=null) {
 		return false;
             }
-            else {                                                  //En caso contrario, se agrega el plan y retorna true
+            else {
                 planes.add(nuevoPlan);
                 return true;
             }
 	}
     }
 	
-    public boolean eliminarPlan(String nombrePlan) {                        //Metodo para eliminar planes, segun el nombre del plan
-        Plan eliminar = buscarPlan(nombrePlan);                             //Variable que almacena el plan a eliminar
-        if(eliminar == null) {                                              //Si la variable que almacena el plan es nula, retorna false. Es decir, no se encontro el plan
+    public boolean eliminarPlan(String nombrePlan) {	//Metodo para eliminar planes, si no lo encuentra retorna false
+        Plan eliminar = buscarPlan(nombrePlan);
+        if(eliminar == null) {
             return false;
         }
-        else {                                                              //Sino, si el plan a eliminar esta en ultima posicion
-            if(planes.get(tamano()-1).equals(eliminar)){                    //Se elimina el plan y retorna true
+        else {
+            if(planes.get(tamano()-1).equals(eliminar)){
                 planes.remove(eliminar);
                 return true;
             }
-	    else {                                                          //Sino, se modifican los id de los planes hacia la derecha restandole 1 a su id
-                for(int i = indice(eliminar)+1; i < tamano()-1; i++) {      //desde la posicion del plan a eliminar hasta el final del vector
+	    else {
+                for(int i = indice(eliminar)+1; i < tamano()-1; i++) {
                     this.planes.get(i).setID(planes.get(i).getID()-1);
                 }
-                planes.remove(eliminar);                                    //Luego se elimina el plan y retorna true
+                planes.remove(eliminar);
                 return true;
             }
         }
     }
     
-    public void modificarPlan(String nombrePlan, Plan modificado){          //Metodo void que modifica el plan segun el nombre del plan y el nuevo plan
-        int i = indice(nombrePlan);                                         //Se ubica el indice
-        planes.get(i).setNombrePlan(modificado.getNombrePlan());            
-        planes.get(i).setValorPlan(modificado.getValorPlan());              //Modificar los datos con los actuales
+    public void modificarPlan(String nombrePlan, Plan modificado){
+        int i = indice(nombrePlan);
+        planes.get(i).setNombrePlan(modificado.getNombrePlan());
+        planes.get(i).setValorPlan(modificado.getValorPlan());
         planes.get(i).setCantCanales(modificado.getCantCanales());
     }
     
@@ -153,38 +150,8 @@ public class ListaPlan {
             System.out.println("Nombre: "+ planes.get(i).getNombrePlan());
             System.out.println("Valor: "+ planes.get(i).getValorPlan());
             System.out.println("Cantidad Canales: "+ planes.get(i).getCantCanales());
-            System.out.println("Cantidad Clientes contratado: "+planes.get(i).getCantVentas());
             System.out.println("____________________________________________");
         }
-    }
-    
-    public void aumentarVentaPlan(String nombre){
-        for(int i = 0; i < tamano(); i++){
-            if(planes.get(i).getNombrePlan().equals(nombre)){
-                planes.get(i).setCantVentas(planes.get(i).getCantVentas() + 1);
-            }
-        }
-    }
-    
-    public void eliminarVentaPlan(String nombre){
-        for(int i = 0; i < tamano(); i++){
-            if(planes.get(i).getNombrePlan().equals(nombre)){
-                planes.get(i).setCantVentas(planes.get(i).getCantVentas() - 1);
-            }
-        }
-    }
-    
-    public String calcularMayorVenta(){
-        int pivote = 0;
-        String planMayorVenta = null;
-        
-        for(int i = 0; i < tamano(); i++){
-            if(pivote < planes.get(i).getCantVentas()){
-                pivote = planes.get(i).getCantVentas();
-                planMayorVenta = planes.get(i).getNombrePlan();
-            }
-        }
-        return planMayorVenta;
     }
     
 //-----------------------------------------------------------------------------------

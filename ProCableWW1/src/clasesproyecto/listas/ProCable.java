@@ -13,7 +13,6 @@ public class ProCable {
     public ListaPersonal personal;  //Lista que contiene los empleados
     public ListaCliente clientes;   //Lista que contiene los clientes suscritos
     public ListaPlan planes;        //Lista que contiene los planes
-    public ListaSucursal sucursales;
     
 /**
  * Constructor de la clase ProCable
@@ -25,41 +24,25 @@ public class ProCable {
     	this.personal = new ListaPersonal();
 	this.clientes = new ListaCliente();
         this.planes = new ListaPlan();
-        this.sucursales = new ListaSucursal();
     }
 	
 //---------------------------- Metodos -----------------------------------------//
 	
     public boolean agregarCliente(String planContratado, String nombre, String apellido, String rut, String correoElectronico, String telefono) {          //Método para agregar un cliente según los datos entregados por parámetros
         if(clientes.estaVacio()) {
-            planes.aumentarVentaPlan(planContratado);
             return clientes.agregarCliente(new Cliente(1, planContratado, nombre, apellido, rut, correoElectronico, telefono));                     //Retorna un true si el cliente se agregó de forma correcta, si es el caso contrario retorna false
 	}
-	else {
-            //Si el Arraylist esta no esta vacio, el cliente se agregará en la última casilla de éste.
-            planes.aumentarVentaPlan(planContratado);
+	else {                                                                                                                      //Si el Arraylist esta no esta vacio, el cliente se agregará en la última casilla de éste.
             return clientes.agregarCliente(new Cliente(clientes.tamano(), planContratado, nombre, apellido, rut, correoElectronico, telefono));
         }
     }
 	
-    public boolean eliminarCliente(String rutCliente) { 
-        //Método para eliminar un cliente según el rut
-        String planContratado = obtenerPlanContratadoCliente(rutCliente);
-        planes.eliminarVentaPlan(planContratado);
+    public boolean eliminarCliente(String rutCliente) {                                                                             //Método para eliminar un cliente según el rut
         return clientes.eliminarCliente(rutCliente);                                   
     }
     
     public void modificarCliente(String rutViejo, String planContratado, String nombre, String apellido, String rutNuevo, String correoElectronico, String telefono){                                   //Método para modificar un cliente según los datos entregados por parámetro
-        String planContratadoCliente = obtenerPlanContratadoCliente(rutViejo);
-        System.out.println("holi "+ planContratado);
-        if(planContratadoCliente.equals(planContratado)){
-            clientes.modificarCliente(rutViejo,new Cliente(0, planContratado, nombre, apellido, rutNuevo, correoElectronico, telefono));
-        }
-        else{
-            planes.eliminarVentaPlan(planContratadoCliente);
-            planes.aumentarVentaPlan(planContratado);
-            clientes.modificarCliente(rutViejo,new Cliente(0, planContratado, nombre, apellido, rutNuevo, correoElectronico, telefono));
-        }
+        clientes.modificarCliente(rutViejo,new Cliente(0, planContratado, nombre, apellido, rutNuevo, correoElectronico, telefono));                                                            //Se modifica el cliente en lista clientes y lista de clientes de contratados
     }    
     
     public boolean buscarCliente(String rut){
@@ -70,7 +53,7 @@ public class ProCable {
         clientes.mostrarCliente();                                                      //Se imprime los datos de los clientes de forma ordenada.
     }
 	
-    public boolean agregarPlan(String nombre, float valorPlan, int cantCanales) {                         //Método para agregar un plan según los datos que se entregan por parámetro
+    public boolean agregarPlan(String nombre, int valorPlan, int cantCanales) {                         //Método para agregar un plan según los datos que se entregan por parámetro
 	if(planes.estaVacio()) {                                                                        //Si el Arraylist de planes está vacio, el plan se agrega en la primera posición
             return planes.agregarPlan(new Plan(1, nombre, valorPlan, cantCanales));                     //En el caso contrario se agregará en la última posición
 	}
@@ -172,28 +155,6 @@ public class ProCable {
     
     public String obtenerPlanContratadoCliente(String rut){
         return clientes.obtenerPlanContratado(rut);
-    }
-    
-    public String obtenerNombrePlan(String rut){
-        return planes.obtenerNombrePlan(rut);
-    }
-    
-    public float obtenerValorPlan(String rut){
-        return planes.obtenerValor(rut);
-    }
-    
-    public int obtenerCantidadCanalesPlan(String rut){
-        return planes.obtenerCantidadCanales(rut);
-    }
-    
-//------------------------------------------------------------------------------
-    
-    public boolean agregarFactura(String rutSucursal, String year, int mes, Factura nuevaFactura){
-        return sucursales.agregarFactura(rutSucursal, year, mes, nuevaFactura);
-    }
-    
-    public String obtenerPlanMayorVenta(){
-        return planes.calcularMayorVenta();
     }
 }   
 
