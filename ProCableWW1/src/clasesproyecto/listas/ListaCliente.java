@@ -160,12 +160,15 @@ public class ListaCliente {
             System.out.println("Datos: "+ clientes.get(i).getPlanContratado());
         }
     }
-    /*
+    /*En proceso
     public Cliente clienteMasEndeudado(){
-        for(int i = 0; i < tamano(); i++){
-            
+        float deudaMayor = 0;
+        for(int i = 0; i < tamano(); i++){ //Recorrer la lista de clientes
+            if(clientes.get(i).)
         }
+        return masEndeudado;
     }
+    
     */
 
     /*------------------------------------------------------------------------*/
