@@ -97,6 +97,11 @@ public class OpcionPlan extends javax.swing.JFrame {
         BtnVerMas.setContentAreaFilled(false);
         BtnVerMas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnVerMas.setOpaque(true);
+        BtnVerMas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVerMasActionPerformed(evt);
+            }
+        });
         getContentPane().add(BtnVerMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 210, 40));
 
         BtnVolverAlMenu.setBackground(new java.awt.Color(102, 0, 102));
@@ -122,6 +127,11 @@ public class OpcionPlan extends javax.swing.JFrame {
         BtnModificar.setContentAreaFilled(false);
         BtnModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnModificar.setOpaque(true);
+        BtnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnModificarActionPerformed(evt);
+            }
+        });
         getContentPane().add(BtnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 210, 40));
 
         lblFondo.setForeground(new java.awt.Color(102, 102, 102));
@@ -145,7 +155,7 @@ public class OpcionPlan extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnVolverAlMenuActionPerformed
 
     private void BtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarActionPerformed
-        if((this.procable).planes == null){
+        if((this.procable).planes.estaVacio()){
             JOptionPane.showMessageDialog(null, "No hay planes por eliminar!");
         }
         else{
@@ -154,6 +164,23 @@ public class OpcionPlan extends javax.swing.JFrame {
             dispose();
         }
     }//GEN-LAST:event_BtnEliminarActionPerformed
+
+    private void BtnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarActionPerformed
+        if((this.procable).planes.estaVacio()){
+            JOptionPane.showMessageDialog(null, "No hay planes por modificar!");
+        }
+        else{
+            VentanaBuscarPlanPorModificar formnom = new VentanaBuscarPlanPorModificar(procable);
+            formnom.setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_BtnModificarActionPerformed
+
+    private void BtnVerMasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerMasActionPerformed
+        SubVentanaVerMasPlan vermas = new SubVentanaVerMasPlan(procable);
+        vermas.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BtnVerMasActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAgregar;
