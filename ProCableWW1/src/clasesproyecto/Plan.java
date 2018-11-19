@@ -5,6 +5,7 @@ public class Plan {
     private String nombrePlan;
     private float valorPlan;
     private int cantCanales;
+    private int cantVentas;
 	
 //--------------------------------------------- Constructor -----------------------------------------//
     
@@ -13,6 +14,7 @@ public class Plan {
 	this.nombrePlan = nombrePlan;
 	this.valorPlan = valorPlan;
 	this.cantCanales = cantCanales;
+        this.cantVentas = 0;
     }
 	
 //--------------------------------------------- Getters y setters -----------------------------------//
@@ -39,6 +41,14 @@ public class Plan {
 
     public void setCantCanales(int cantCanales) {
 	this.cantCanales = cantCanales;
+    }
+
+    public int getCantVentas() {
+        return cantVentas;
+    }
+
+    public void setCantVentas(int cantVentas) {
+        this.cantVentas = cantVentas;
     }
 
     public int getID() {

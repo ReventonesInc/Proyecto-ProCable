@@ -13,19 +13,22 @@ import javax.swing.JOptionPane;
  *
  * @author XavierKrostya
  */
-public class VentanaAgregarPlan extends javax.swing.JFrame {
+public class VentanaModificarPlan extends javax.swing.JFrame {
     
     private ProCable procable;
+    private String nombre;
     /**
-     * Creates new form VentanaAgregarPlan
+     * Creates new form VentanaModificarPlan
      */
-    public VentanaAgregarPlan(ProCable procable) {
+    public VentanaModificarPlan(ProCable procable, String nombre) {
         initComponents();
         this.setLocationRelativeTo(null);
         setResizable(false);
         this.procable = procable;
+        this.nombre = nombre;
         /*Para poder cargar la imagen del icono*/
         setIconImage(new ImageIcon(getClass().getResource("/Imágenes/network.png")).getImage());
+        insertarDatos();
     }
 
     /**
@@ -142,14 +145,14 @@ public class VentanaAgregarPlan extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextValorActionPerformed
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
-        JOptionPane.showMessageDialog(null, "No se agregó el plan!");
+        JOptionPane.showMessageDialog(null, "No se modificó el plan!");
         OpcionPlan submenu = new OpcionPlan(procable);
         submenu.setVisible(true);
         dispose();
     }//GEN-LAST:event_jbSalirActionPerformed
 
     private void jbAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAceptarActionPerformed
-        
+
         if(jTextNombre.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Es obligatorio completar el formulario!");
         }
@@ -164,21 +167,23 @@ public class VentanaAgregarPlan extends javax.swing.JFrame {
                 else{
                     float valor = Float.parseFloat(jTextValor.getText());
                     int cantidadCanal = Integer.parseInt(jTextCanales.getText());
-                    if((this.procable).agregarPlan(jTextNombre.getText(), valor, cantidadCanal) == true){
-                        JOptionPane.showMessageDialog(null, "Plan agregado con exito!");
-                        (this.procable).mostrarPlanes();
-                        OpcionPlan submenu = new OpcionPlan(procable);
-                        submenu.setVisible(true);
-                        dispose();
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(null, "Ocurrió un error al agregar el Plan!");
-                    }
+                    (this.procable).modificarPlan(nombre, jTextNombre.getText(), valor, cantidadCanal);
+                    JOptionPane.showMessageDialog(null, "Plan modificado con exito!");
+                    (this.procable).mostrarPlanes();
+                    OpcionPlan submenu = new OpcionPlan(procable);
+                    submenu.setVisible(true);
+                    dispose();
                 }
             }
         }
     }//GEN-LAST:event_jbAceptarActionPerformed
-
+    
+    private void insertarDatos(){
+        jTextNombre.setText((this.procable).obtenerNombrePlan(nombre));
+        jTextValor.setText(Float.toString((this.procable).obtenerValorPlan(nombre)));
+        jTextCanales.setText(Integer.toString((this.procable).obtenerCantidadCanalesPlan(nombre)));
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextCanales;
