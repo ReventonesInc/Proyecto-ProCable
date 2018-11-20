@@ -18,7 +18,7 @@ public class Cliente extends Persona {      //Herencia: Clase cliente hereda per
 	this.telefono = telefono;
 	this.fechaContrato = new SimpleDateFormat();
         this.ultimoMesPagado =  new SimpleDateFormat();
-        this. deuda = 0;
+        this.deuda = 0;
         this.numeroDeudas = 0;
     }
     
@@ -50,9 +50,14 @@ public class Cliente extends Persona {      //Herencia: Clase cliente hereda per
     
 //----------------------- Métodos ----------------------------------------------------------//
     
+    //Calcular diferencia entre fecha contrato y ultimo mes pagado
+    //Luego, calcular cantidad de meses fecha actual y fecha ultimo pago
+    //Acualizar deuda como valor en $$ de lo que debe en "x" meses
+    //Y numero de deudas como la cantidad de meses que hay entre fecha actual y fecha ultimo pago
+    
     public void calcularDeuda(float otrosPagos){
         int i;
-         /*
+        /*
         WNNN NO SE COMO  HACER LA WEA DE LA DIFERENCIA DE MESES CON LAS DOS FECHAS
         */
     }
