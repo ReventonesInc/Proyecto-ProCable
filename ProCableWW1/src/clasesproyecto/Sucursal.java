@@ -11,7 +11,6 @@ import java.util.*;
 /* Un Hashmap de planes conectado con la sucursal*/
 
 public class Sucursal {
-    //private ListaFactura facturasSucursales;  
     private int ID;
     private String nombreSucursal;
     private String direccionSurcursal;

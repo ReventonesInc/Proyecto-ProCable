@@ -105,16 +105,16 @@ public class ListaCliente {
     }
     
     public boolean agregarCliente(Cliente nuevoCliente) {
-        if(estaVacio()) {							//Si la lista esta vacia
-            clientes.add(nuevoCliente);						//Agrega el cliente al final
+        if(estaVacio()) {							//Si la lista esta vacia agrega el cliente al final
+            clientes.add(nuevoCliente);						
             return true;
         }
-        else {									//Si no esta vacia
-            if(buscarCliente(nuevoCliente)!=null) {				//Busca el cliente
+        else {									//Si no esta vacia busca el cliente
+            if(buscarCliente(nuevoCliente)!=null) {
                 return false;							//Si lo encuentra retorna false
             }
-            else {								//Si lo encuentra
-                clientes.add(nuevoCliente);					//Lo agrega al final
+            else {								//Si lo encuentra lo agrega al final
+                clientes.add(nuevoCliente);					
                 return true;
             }
         }
