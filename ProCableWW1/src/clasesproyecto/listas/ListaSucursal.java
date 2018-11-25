@@ -126,4 +126,21 @@ public class ListaSucursal {
         return facturasCliente;
     }
     
+    public Sucursal sucursalMayorIngresos(String year){
+        Sucursal mayor = sucursales.get(0);
+        for(int i = 1; i < tamano(); i++){
+            if(sucursales.get(i).obtenerIngresosSucursalAnual(year) > mayor.obtenerIngresosSucursalAnual(year)){
+                mayor = sucursales.get(i);
+            }
+        }
+        return mayor;
+    }
+    
+    public ArrayList<Sucursal> sucursalesMayoresIngresos(String year){
+        ArrayList<Sucursal> mayoresIngresos = new ArrayList<Sucursal>();
+        mayoresIngresos.add(sucursalMayorIngresos(year));
+        //CTM SE ME OLVIDO COMO HACER UN SORT QUE WEA
+        return null;
+    }
+    
 }

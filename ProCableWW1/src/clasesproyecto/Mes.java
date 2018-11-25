@@ -41,4 +41,8 @@ public class Mes {
         return facturasMensuales.buscarFacturasCliente(rutCliente);
     }
     
+    public float ingresoMensual(){
+        return facturasMensuales.totalIngresosMes();
+    }
+    
 }

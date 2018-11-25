@@ -200,5 +200,9 @@ public class ProCable {
     public ArrayList<Factura> obtenerFacturasDeUnCliente(String rutCliente, String year){
         return sucursales.obternerFacturasCliente(rutCliente, year);
     }
+    
+    public ArrayList<Sucursal> sucursalesMayoresIngresos(String year){
+        return sucursales.sucursalesMayoresIngresos(year);
+    }
 }   
 

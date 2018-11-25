@@ -57,7 +57,7 @@ public class ListaMes {
         return meses.get(numMes).getFacturasMensuales().agregarFactura(nuevaFactura);   //Retorna true si la factura fue agregada satisfactoriamente y false en caso contrario
     }
     
-    ArrayList<Factura> obtenerFacturaClientes(String rutCliente){
+    public ArrayList<Factura> obtenerFacturaClientes(String rutCliente){
         ArrayList<Factura> facturasAnuales = new ArrayList<Factura>();
         for(int i = 0; i < 12; i++){
             //unir todos los arraylist
@@ -66,4 +66,11 @@ public class ListaMes {
         return facturasAnuales;
     }
     
+    public float ingresoAnual(){
+        float total = 0;
+        for(int i = 0; i < 12; i++){
+            total+=meses.get(i).ingresoMensual();
+        }
+        return total;
+    }
 }

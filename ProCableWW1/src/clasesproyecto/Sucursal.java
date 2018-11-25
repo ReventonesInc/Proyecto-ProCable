@@ -84,6 +84,8 @@ public class Sucursal {
         }
     }
     
-    
+    public float obtenerIngresosSucursalAnual(String year){
+        return facturasAnuales.ingresosAnuales(year);
+    }
     
 }

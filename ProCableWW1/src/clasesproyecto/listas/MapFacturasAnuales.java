@@ -65,6 +65,10 @@ public class MapFacturasAnuales {
             return facturasAnuales;
         }
     }
+    
+    public float ingresosAnuales(String year){
+        return facturas.get(year).ingresoAnual();
+    }
 }
 
 
