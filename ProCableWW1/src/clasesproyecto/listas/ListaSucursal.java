@@ -118,4 +118,11 @@ public class ListaSucursal {
         return buscarSucursal(rutSucursal).getFacturasAnuales().agregarFactura(year, mes, nuevaFactura);
     }
     
+    public ArrayList<Factura> obternerFacturasCliente(String rutCliente, String year){
+    
+        for(int i = 0; i < tamano(); i++){
+            
+        }
+    }
+    
 }

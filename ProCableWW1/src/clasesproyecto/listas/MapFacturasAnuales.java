@@ -54,4 +54,17 @@ public class MapFacturasAnuales {
     public boolean agregarFactura(String year,int mes, Factura nuevaFactura){
         return facturas.get(year).agregarFactura(mes, nuevaFactura);
     }
+    
+    ArrayList<Factura> obtenerFacturaClientes(String rutCliente, String year){
+        ArrayList<Factura> facturasAnuales = new ArrayList<Factura>();
+        if(facturas.containsKey(year) == false){
+           return null;
+        }
+        else{
+            facturasAnuales.addAll(facturas.get(year).obtenerFacturaClientes(rutCliente));
+            return facturasAnuales;
+        }
+    }
 }
+
+

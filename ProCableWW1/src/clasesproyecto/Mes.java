@@ -5,7 +5,7 @@
  */
 package clasesproyecto;
 import clasesproyecto.listas.*;
-
+import java.util.*;
 public class Mes {
     private int numeroMes;
     private ListaFactura facturasMensuales;
@@ -37,6 +37,8 @@ public class Mes {
     
 //----------------------- Métodos ----------------------------------------------------------//
     
-    
+    public ArrayList<Factura> obtenerFacturasCliente(String rutCliente){
+        return facturasMensuales.buscarFacturasCliente(rutCliente);
+    }
     
 }

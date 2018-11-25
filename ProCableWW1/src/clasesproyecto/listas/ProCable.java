@@ -8,6 +8,7 @@
 package clasesproyecto.listas;
 
 import clasesproyecto.*;
+import java.util.*;
 
 public class ProCable {
     public ListaPersonal personal;  //Lista que contiene los empleados
@@ -194,6 +195,10 @@ public class ProCable {
     
     public String obtenerPlanMayorVenta(){
         return planes.calcularMayorVenta();
+    }
+    
+    public ArrayList<Factura> obtenerFacturasDeUnCliente(String rutCliente, String year){
+        return sucursales.obternerFacturasCliente(rutCliente, year);
     }
 }   
 

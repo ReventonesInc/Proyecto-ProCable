@@ -67,6 +67,12 @@ public class Sucursal {
     public MapFacturasAnuales getFacturasAnuales() {
         return facturasAnuales;
     }
+
+    public void setFacturasAnuales(MapFacturasAnuales facturasAnuales) {
+        this.facturasAnuales = facturasAnuales;
+    }
+    
+    
     
 //---------------------------------------- Métodos ---------------------------------------------//  
     public boolean equals(Sucursal comparado){
@@ -77,5 +83,7 @@ public class Sucursal {
             return rutSucursal.equals(comparado.getRutSucursal());
         }
     }
+    
+    
     
 }
