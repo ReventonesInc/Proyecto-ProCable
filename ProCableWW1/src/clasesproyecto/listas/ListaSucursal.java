@@ -137,8 +137,7 @@ public class ListaSucursal {
     }
     
     public ArrayList<Sucursal> sucursalesMayoresIngresos(String year){
-        ArrayList<Sucursal> mayoresIngresos = new ArrayList<Sucursal>();
-        mayoresIngresos.add(sucursalMayorIngresos(year));
+        //ArrayList<Sucursal> mayoresIngresos = sucursales.sort();
         //CTM SE ME OLVIDO COMO HACER UN SORT QUE WEA
         return null;
     }
