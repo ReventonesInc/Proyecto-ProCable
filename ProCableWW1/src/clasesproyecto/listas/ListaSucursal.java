@@ -119,10 +119,11 @@ public class ListaSucursal {
     }
     
     public ArrayList<Factura> obternerFacturasCliente(String rutCliente, String year){
-    
+        ArrayList<Factura> facturasCliente = new ArrayList<Factura>();
         for(int i = 0; i < tamano(); i++){
-            
+            facturasCliente.addAll(sucursales.get(i).getFacturasAnuales().obtenerFacturaClientes(rutCliente, year));
         }
+        return facturasCliente;
     }
     
 }
